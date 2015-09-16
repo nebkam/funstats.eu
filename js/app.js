@@ -7,7 +7,7 @@
 					lat: position.coords.latitude,
 					lng: position.coords.longitude,
 					type: 'JSON',
-					username: 'demo'
+					username: 'nebkam'
 				}}).success(function(res) {
 					$scope.code = res.countryCode.toLowerCase();
 					$scope.name = res.countryName;
