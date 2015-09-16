@@ -1,0 +1,1 @@
+Navigate to the root and run `php -S localhost:8000` to load up PHP's builtin webserver
