@@ -1,5 +1,22 @@
 (function() {
-	var app = angular.module('AppChallenge', []);
+	var app = angular.module('AppChallenge', ['ngRoute']);
+
+	app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider
+			.when('/challenge', {
+				templateUrl: 'views/challenge.html'
+			})
+			.when('/fun-facts', {
+				templateUrl: 'views/fun-facts.html'
+			})
+			.when('/home', {
+				templateUrl: 'views/home.html'
+			})
+			.otherwise({
+				templateUrl: 'views/home.html'
+			});
+	}]);
+
 	app.controller('CountryController', ['$scope','$http', function($scope,$http) {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
