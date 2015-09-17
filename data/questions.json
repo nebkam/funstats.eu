@@ -1,0 +1,40 @@
+{
+	"questions": {
+		"1" : {
+			"question" : "Do your working hours fit in with your family or social commitments outside work?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=170&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Employment and labour - General",
+			"answers" : {
+				"1" : "Very well",
+				"2" : "Fairly well",
+				"3" : "Not very well",
+				"4" : "Not at all well"
+			}
+		},
+		"2" : {
+			"question" : "What is your martial status?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=3&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Family life and mariage",
+			"answers" : {
+				"1" : "Married or living with partner",
+				"2" : "Separated or divorced and not living with partner",
+				"3" : "Widowed and not living with partner",
+				"4" : "Never married and not living with partner"
+			}
+		},
+		"3" : {
+			"question" : "The area in which you live is ... ?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=6&filter=",
+			"type" : "WeightedFrequency",
+			"tag" : "Environment, conservation and land use",
+			"answers" : {
+				"1" : "The open countryside",
+				"2" : "A village/small town",
+				"3" : "A medium to large town",
+				"4" : "A city or city suburb"
+			}
+		}
+	}
+}
