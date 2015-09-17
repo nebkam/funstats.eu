@@ -21,7 +21,7 @@
 		return {
 			pickRandom: function(cb) {
 				$http
-					.get('/data/questions.json')
+					.get('/data/questions.json')//TODO caching?
 					.success(function(data) {
 						cb( data.questions[Math.floor(Math.random() * data.questions.length)] );
 					});
