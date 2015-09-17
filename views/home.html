@@ -1,1 +1,18 @@
-Home
+<div class="container-fluid" ng-controller="SurveyController">
+	<h1><span class="glyphicon glyphicon-gbp"></span></h1>
+	<h2>
+		{{question}}
+	</h2>
+	<form>
+		<div class="radio" ng-repeat="question in questions">
+			<label>
+				<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{question.value}}" ng-click="setSelected(question.value);">
+				{{question.text}}
+			</label>
+		</div>
+	</form>
+	<div class="row">
+		<button type="button" class="btn btn-primary" ng-click="submit();">Submit</button>
+		<button type="button" class="btn btn-default">Skip</button>
+	</div>
+</div>
