@@ -17,6 +17,18 @@
 			});
 	}]);
 
+	app.factory('questions', ['$http',function($http) {
+		return {
+			pickRandom: function(cb) {
+				$http
+					.get('/data/questions.json')
+					.success(function(data) {
+						cb( data.questions[Math.floor(Math.random() * data.questions.length)] );
+					});
+			}
+		};
+	}]);
+
 	app.controller('CountryController', ['$scope','$http', function($scope,$http) {
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position) {
@@ -33,28 +45,25 @@
 		}
 		}]);
 
-	app.controller('SurveyController', ['$scope','$http',function($scope,$http) {
-		$scope.question = 'Do your working hours fit in with your family or social commitments outside work?';
-		$scope.questions = [
-			{ value: 1, text: 'Very well' },
-			{ value: 2, text: 'Fairly well' },
-			{ value: 3, text: 'Not very well' },
-			{ value: 4, text: 'Not at all well' }
-		];
+	app.controller('SurveyController', ['$scope','$http','questions',function($scope,$http,questions) {
+		$scope.question = '';
+		$scope.answers = [];
+		$scope.apiUrl = '';
+
+		questions.pickRandom(function(random) {
+			$scope.question = random.question;
+			$scope.answers = random.answers;
+			$scope.apiUrl = random.apiUrl;
+		});
+
 		$scope.setSelected = function(value) {
 			$scope.selected = value;
 		};
 		$scope.submit = function() {
-			//console.log($scope.selected);
 			$http
-				.get('https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=170&filter=&user_key=32c520dabe65f1a197868d539b89048b')
+				.get($scope.apiUrl)
 				.success(function(res) {
-					for (var prop in res.TimeSeries) {
-						var item = res.TimeSeries[prop];
-						if (item.Year == 2011) {
-							//console.log(item);
-						}
-					}
+					console.log(res);
 				});
 		};
 	}]);
