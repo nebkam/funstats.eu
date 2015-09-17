@@ -1,40 +1,245 @@
 {
-	"questions": {
-		"1" : {
+	"questions": [
+		{
+			"id" : 1,
 			"question" : "Do your working hours fit in with your family or social commitments outside work?",
 			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=170&filter=",
 			"type" : "TimeseriesFrequency",
 			"tag" : "Employment and labour - General",
-			"answers" : {
-				"1" : "Very well",
-				"2" : "Fairly well",
-				"3" : "Not very well",
-				"4" : "Not at all well"
-			}
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Very Well"
+				},
+				{
+					"value" : 2,
+					"text" : "Fairly well"
+				},
+				{
+					"value" : 3,
+					"text" : "Not very well"	
+				},
+				{
+					"value" : 4,
+					"text" : "Not at all well"
+				}
+			]
 		},
-		"2" : {
+	    {
+	    	"id" : 2,
 			"question" : "What is your martial status?",
 			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=3&filter=",
 			"type" : "TimeseriesFrequency",
 			"tag" : "Family life and mariage",
-			"answers" : {
-				"1" : "Married or living with partner",
-				"2" : "Separated or divorced and not living with partner",
-				"3" : "Widowed and not living with partner",
-				"4" : "Never married and not living with partner"
-			}
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Married or living with partner"
+				},
+				{
+					"value" : 2,
+					"text" : "Separated or divorced and not living with partner"
+				},
+				{
+					"value" : 3,
+					"text" : "Widowed and not living with partner"	
+				},
+				{
+					"value" : 4,
+					"text" : "Never married and not living with partner"
+				}
+			]
 		},
-		"3" : {
+		{
+			"id" : 3,
 			"question" : "The area in which you live is ... ?",
 			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=6&filter=",
 			"type" : "WeightedFrequency",
 			"tag" : "Environment, conservation and land use",
-			"answers" : {
-				"1" : "The open countryside",
-				"2" : "A village/small town",
-				"3" : "A medium to large town",
-				"4" : "A city or city suburb"
-			}
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "The open countryside"
+				},
+				{
+					"value" : 2,
+					"text" : "A village/small town"
+				},
+				{
+					"value" : 3,
+					"text" : "A medium to large town"	
+				},
+				{
+					"value" : 4,
+					"text" : "A city or city suburb"
+				}
+			]
+		},
+		{
+			"id" : 4,
+			"question" : "Thinking of your immediate neighbourhood - do you have problems with: Air quality?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=49&filter=",
+			"type" : "WeightedFrequency",
+			"tag" : "Social attitudes and behavior",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Major problems"
+				},
+				{
+					"value" : 2,
+					"text" : "Moderate problems"
+				},
+				{
+					"value" : 3,
+					"text" : "No problems"	
+				}
+			]
+		},
+		{
+			"id" : 5,
+			"question" : "What is your age?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=12&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Social stratification and grouping",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "18-24"
+				},
+				{
+					"value" : 2,
+					"text" : "25-34"
+				},
+				{
+					"value" : 3,
+					"text" : "35-49"	
+				},
+				{
+					"value" : 4,
+					"text" : "50-64"	
+				},
+				{
+					"value" : 5,
+					"text" : "65+"	
+				}
+			]
+		},
+		{
+			"id" : 6,
+			"question" : "What is your level of education?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=17&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Education - general",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Primary or less"
+				},
+				{
+					"value" : 2,
+					"text" : "Secondary"
+				},
+				{
+					"value" : 3,
+					"text" : "Tertiary"	
+				},
+				{
+					"value" : 4,
+					"text" : "Completed education abroad"	
+				},
+				{
+					"value" : 5,
+					"text" : "Don't know"	
+				}
+			]
+		},
+		{
+			"id" : 7,
+			"question" : "What is your employment status?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=18&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Employment and labour - general",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Employed (includes on leave)"
+				},
+				{
+					"value" : 2,
+					"text" : "Unemployed"
+				},
+				{
+					"value" : 3,
+					"text" : "Unable to work - disability/illness"	
+				},
+				{
+					"value" : 4,
+					"text" : "Retired"	
+				},
+				{
+					"value" : 5,
+					"text" : "Homemaker"	
+				},
+				{
+					"value" : 6,
+					"text" : "Student"	
+				},
+				{
+					"value" : 7,
+					"text" : "Other"	
+				}
+			]
+		},
+		{
+			"id" : 8,
+			"question" : "Financial situation of your household compared to 12 months ago?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=137&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Economics",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Better"
+				},
+				{
+					"value" : 2,
+					"text" : "The same"
+				},
+				{
+					"value" : 3,
+					"text" : "Worse"	
+				}
+			]
+		},
+		{
+			"id" : 9,
+			"question" : "What is your health condition?",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=36&filter=",
+			"type" : "TimeseriesFrequency",
+			"tag" : "Health",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Very good"
+				},
+				{
+					"value" : 2,
+					"text" : "Good"
+				},
+				{
+					"value" : 3,
+					"text" : "Fair"	
+				},
+				{
+					"value" : 4,
+					"text" : "Bad"	
+				},
+				{
+					"value" : 5,
+					"text" : "Very bad"	
+				}
+			]
 		}
-	}
+	]
 }
