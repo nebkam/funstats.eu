@@ -1,3 +1,14 @@
+/**
+ *
+ * @param {Array} arr
+ * @returns {*}
+ */
+window.random = function(arr) {
+	return arr[Math.floor(Math.random() * arr.length)];
+};
+window.baseUrl = 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS';
+window.userKey = "32c520dabe65f1a197868d539b89048b";
+
 (function() {
 	var app = angular.module('AppChallenge', ['ngRoute']);
 
@@ -23,28 +34,26 @@
 				$http
 					.get('/data/questions.json')//TODO caching?
 					.success(function(data) {
-						cb( data.questions[Math.floor(Math.random() * data.questions.length)] );
+						cb( random(data.questions) );
 					});
 			}
 		};
 	}]);
 
-	app.factory('countries', ['$http', function($http) {
-		return {
-			pickRandom: function(cb) {
-				$http
-					.get('/data/countries.json')//TODO caching?
-					.success(function(data) {
-						cb( data[Math.floor(Math.random() * data.length)] );
-					});
-			}
-		};
-	}]);
-
-	app.controller('TriviaController', ['$scope', function($scope) {
-		$scope.photo = 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/SS4TB1O5NQ.jpg';
-		$scope.percent = 23;
-		$scope.text = 'of women in Serbia are single';
+	app.controller('TriviaController', ['$scope','$http', function($scope,$http	) {
+		var triviaType = random(window.trivia);
+		$scope.type = triviaType.type;
+		var country = random(window.countries);
+		$http
+			.get(window.baseUrl + triviaType.apiUrl, { params: {
+				variableId: triviaType.variableId,
+				filter: country.filter,
+				user_key: window.userKey
+			}})
+			.success(function(data) {
+				$scope.percent = triviaType.getPercent(data);
+				$scope.text = triviaType.getText(country.name);
+			});
 	}]);
 
 	app.controller('SurveyController', ['$scope','$http','questions',function($scope,$http,questions) {
@@ -63,7 +72,7 @@
 		};
 		$scope.submit = function() {
 			$http
-				.get($scope.apiUrl + '&user_key=32c520dabe65f1a197868d539b89048b')
+				.get(window.baseUrl + $scope.apiUrl + '&user_key=' + window.userKey)
 				.success(function(res) {
 					console.log(res);
 				});
