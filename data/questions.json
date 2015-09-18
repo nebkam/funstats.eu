@@ -3,9 +3,9 @@
 		{
 			"id" : 1,
 			"question" : "Do your working hours fit in with your family or social commitments outside work?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=170&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=170",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Employment and labour - General",
+			"topic" : "Employment and labour - General",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -28,9 +28,9 @@
 	    {
 	    	"id" : 2,
 			"question" : "What is your martial status?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=3&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=3",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Family life and mariage",
+			"topic" : "Family life and mariage",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -53,9 +53,9 @@
 		{
 			"id" : 3,
 			"question" : "The area in which you live is ... ?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=6&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=6",
 			"type" : "WeightedFrequency",
-			"tag" : "Environment, conservation and land use",
+			"topic" : "Environment, conservation and land use",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -78,9 +78,9 @@
 		{
 			"id" : 4,
 			"question" : "Thinking of your immediate neighbourhood - do you have problems with: Air quality?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=49&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=49",
 			"type" : "WeightedFrequency",
-			"tag" : "Social attitudes and behavior",
+			"topic" : "Social attitudes and behavior",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -99,9 +99,9 @@
 		{
 			"id" : 5,
 			"question" : "What is your age?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=12&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=12",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Social stratification and grouping",
+			"topic" : "Social stratification and grouping",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -128,9 +128,9 @@
 		{
 			"id" : 6,
 			"question" : "What is your level of education?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=17&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=17",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Education - general",
+			"topic" : "Education - general",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -157,9 +157,9 @@
 		{
 			"id" : 7,
 			"question" : "What is your employment status?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=18&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=18",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Employment and labour - general",
+			"topic" : "Employment and labour - general",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -194,9 +194,9 @@
 		{
 			"id" : 8,
 			"question" : "Financial situation of your household compared to 12 months ago?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=137&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=137",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Economics",
+			"topic" : "Economics",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -215,9 +215,9 @@
 		{
 			"id" : 9,
 			"question" : "What is your health condition?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=36&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=36",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Health",
+			"topic" : "Health",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -244,9 +244,9 @@
 		{
 			"id" : 10,
 			"question" : "Are you limited in your daily activities by this physical or mental health problem, illness or disability?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=38&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=38",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Health - Specific diseases",
+			"topic" : "Health - Specific diseases",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -265,9 +265,9 @@
 		{
 			"id" : 11,
 			"question" : "Which of the following best describes your accommodation?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=40&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=40",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Housing",
+			"topic" : "Housing",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -298,9 +298,9 @@
 		{
 			"id" : 12,
 			"question" : "Difficult to see a doctor because of distance?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=55&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=55",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Health - Services",
+			"topic" : "Health - Services",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -319,9 +319,9 @@
 		{
 			"id" : 13,
 			"question" : "Over the last 12 months, have you: Attended a protest or demonstration?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=55&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=55",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Politics - political behavior and attitudes",
+			"topic" : "Politics - political behavior and attitudes",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -336,9 +336,9 @@
 		{
 			"id" : 14,
 			"question" : "Do you feel that you are free to decide how to live your life?",
-			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=142&filter=&user_key=32c520dabe65f1a197868d539b89048b",
+			"apiUrl" : "https://api.ukdataservice.ac.uk/V1/datasets/EQLS/TimeseriesFrequency?variableId=142",
 			"type" : "TimeseriesFrequency",
-			"tag" : "Society and culture - Social indicators and quality of life",
+			"topic" : "Society and culture - Social indicators and quality of life",
 			"answers" : [
 				{ 
 					"value" : 1,

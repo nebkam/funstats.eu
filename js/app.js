@@ -61,7 +61,7 @@
 		};
 		$scope.submit = function() {
 			$http
-				.get($scope.apiUrl)
+				.get($scope.apiUrl + '&user_key=32c520dabe65f1a197868d539b89048b')
 				.success(function(res) {
 					console.log(res);
 				});
