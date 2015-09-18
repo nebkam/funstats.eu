@@ -29,21 +29,11 @@
 		};
 	}]);
 
-	app.controller('CountryController', ['$scope','$http', function($scope,$http) {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				$http.get('http://ws.geonames.org/countryCode', { params: {
-					lat: position.coords.latitude,
-					lng: position.coords.longitude,
-					type: 'JSON',
-					username: 'nebkam'
-				}}).success(function(res) {
-					$scope.code = res.countryCode.toLowerCase();
-					$scope.name = res.countryName;
-				});
-			});
-		}
-		}]);
+	app.controller('TriviaController', ['$scope', function($scope) {
+		$scope.photo = 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/SS4TB1O5NQ.jpg';
+		$scope.percent = 23;
+		$scope.text = 'of women in Serbia are single';
+	}]);
 
 	app.controller('SurveyController', ['$scope','$http','questions',function($scope,$http,questions) {
 		$scope.question = '';
