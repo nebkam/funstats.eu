@@ -13,7 +13,7 @@
 				templateUrl: 'views/survey.html'
 			})
 			.otherwise({
-				templateUrl: 'views/about.html'
+				templateUrl: 'views/home.html'
 			});
 	}]);
 
