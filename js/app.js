@@ -6,8 +6,8 @@
 			.when('/challenge', {
 				templateUrl: 'views/challenge.html'
 			})
-			.when('/fun-facts', {
-				templateUrl: 'views/fun-facts.html'
+			.when('/trivia', {
+				templateUrl: 'views/trivia.html'
 			})
 			.when('/survey', {
 				templateUrl: 'views/survey.html'
