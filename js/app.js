@@ -9,11 +9,11 @@
 			.when('/fun-facts', {
 				templateUrl: 'views/fun-facts.html'
 			})
-			.when('/home', {
-				templateUrl: 'views/home.html'
+			.when('/survey', {
+				templateUrl: 'views/survey.html'
 			})
 			.otherwise({
-				templateUrl: 'views/home.html'
+				templateUrl: 'views/about.html'
 			});
 	}]);
 
