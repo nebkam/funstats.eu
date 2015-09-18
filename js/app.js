@@ -29,6 +29,18 @@
 		};
 	}]);
 
+	app.factory('countries', ['$http', function($http) {
+		return {
+			pickRandom: function(cb) {
+				$http
+					.get('/data/countries.json')//TODO caching?
+					.success(function(data) {
+						cb( data[Math.floor(Math.random() * data.length)] );
+					});
+			}
+		};
+	}]);
+
 	app.controller('TriviaController', ['$scope', function($scope) {
 		$scope.photo = 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/SS4TB1O5NQ.jpg';
 		$scope.percent = 23;
