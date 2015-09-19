@@ -51,7 +51,7 @@ window.userKey = "32c520dabe65f1a197868d539b89048b";
 				user_key: window.userKey
 			}})
 			.success(function(data) {
-				$scope.percent = triviaType.getPercent(data);
+				$scope.headline = triviaType.getHeadline(data);
 				$scope.text = triviaType.getText(country.name);
 			});
 	}]);
