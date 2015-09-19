@@ -10,7 +10,7 @@ window.baseUrl = 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS';
 window.userKey = "32c520dabe65f1a197868d539b89048b";
 
 (function() {
-	var app = angular.module('AppChallenge', ['ngRoute']);
+	var app = angular.module('app', ['ngRoute']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
