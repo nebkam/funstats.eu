@@ -6,11 +6,9 @@
 window.random = function(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
 };
-window.baseUrl = 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS';
-window.userKey = "32c520dabe65f1a197868d539b89048b";
 
 (function() {
-	var app = angular.module('app', ['ngRoute']);
+	var app = angular.module('app', ['app.config','ngRoute']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
@@ -40,15 +38,16 @@ window.userKey = "32c520dabe65f1a197868d539b89048b";
 		};
 	}]);
 
-	app.controller('TriviaController', ['$scope','$http', function($scope,$http	) {
+	app.controller('TriviaController', ['$scope','$http','triviaTypes','countryList','baseUrl','userKey',
+		function($scope,$http,triviaTypes,countryList,baseUrl,userKey) {
 		$scope.init = function() {
-			var triviaType = random(window.trivia);
-			var country = random(window.countries);
+			var triviaType = random(triviaTypes);
+			var country = random(countryList);
 			$http
-				.get(window.baseUrl + triviaType.apiUrl, { params: {
+				.get(baseUrl + triviaType.apiUrl, { params: {
 					variableId: triviaType.variableId,
 					filter: country.filter,
-					user_key: window.userKey
+					user_key: userKey
 				}})
 				.success(function(data) {
 					$scope.type = triviaType.type;
@@ -59,7 +58,8 @@ window.userKey = "32c520dabe65f1a197868d539b89048b";
 		$scope.init();
 	}]);
 
-	app.controller('SurveyController', ['$scope','$http','questions',function($scope,$http,questions) {
+	app.controller('SurveyController', ['$scope','$http','questions','baseUrl','userKey',
+		function($scope,$http,questions,baseUrl,userKey) {
 		$scope.question = '';
 		$scope.answers = [];
 		$scope.apiUrl = '';
@@ -75,7 +75,7 @@ window.userKey = "32c520dabe65f1a197868d539b89048b";
 		};
 		$scope.submit = function() {
 			$http
-				.get(window.baseUrl + $scope.apiUrl + '&user_key=' + window.userKey)
+				.get(baseUrl + $scope.apiUrl + '&user_key=' + userKey)
 				.success(function(res) {
 					console.log(res);
 				});
