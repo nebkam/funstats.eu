@@ -41,19 +41,22 @@ window.userKey = "32c520dabe65f1a197868d539b89048b";
 	}]);
 
 	app.controller('TriviaController', ['$scope','$http', function($scope,$http	) {
-		var triviaType = random(window.trivia);
-		$scope.type = triviaType.type;
-		var country = random(window.countries);
-		$http
-			.get(window.baseUrl + triviaType.apiUrl, { params: {
-				variableId: triviaType.variableId,
-				filter: country.filter,
-				user_key: window.userKey
-			}})
-			.success(function(data) {
-				$scope.headline = triviaType.getHeadline(data);
-				$scope.text = triviaType.getText(country.name);
-			});
+		$scope.init = function() {
+			var triviaType = random(window.trivia);
+			var country = random(window.countries);
+			$http
+				.get(window.baseUrl + triviaType.apiUrl, { params: {
+					variableId: triviaType.variableId,
+					filter: country.filter,
+					user_key: window.userKey
+				}})
+				.success(function(data) {
+					$scope.type = triviaType.type;
+					$scope.headline = triviaType.getHeadline(data);
+					$scope.text = triviaType.getText(country.name);
+				});
+		};
+		$scope.init();
 	}]);
 
 	app.controller('SurveyController', ['$scope','$http','questions',function($scope,$http,questions) {
