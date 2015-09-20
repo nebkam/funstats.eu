@@ -1,16 +1,16 @@
 <div class="container-fluid" ng-controller="TriviaController">
 	<div class="row">
 		<div class="col-sm-6 center-block">
-			<img class="img-responsive" ng-src="./img/trivia/{{type}}.jpg" />
+			<img class="img-responsive" ng-src="./img/trivia/{{fact.type}}.jpg" />
 		</div>
 		<div class="col-sm-6 text-center ver">
-			<h2>{{headline}}</h2>
-			<p class="lead">{{text}}</p>
+			<h2>{{fact.headline}}</h2>
+			<p class="lead">{{fact.text}}</p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-xs-6 col-xs-offset-6 text-center">
-			<button type="button" class="btn btn-primary btn-block" ng-click="init();">
+			<button type="button" class="btn btn-primary btn-block" ng-click="nextFact();">
 				Next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			</button>
 		</div>

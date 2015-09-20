@@ -8,7 +8,7 @@ window.random = function(arr) {
 };
 
 (function() {
-	var app = angular.module('app', ['app.config','ngRoute']);
+	var app = angular.module('app', ['app.config','app.services','ngRoute']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
@@ -38,24 +38,13 @@ window.random = function(arr) {
 		};
 	}]);
 
-	app.controller('TriviaController', ['$scope','$http','triviaTypes','countryList','baseUrl','userKey',
-		function($scope,$http,triviaTypes,countryList,baseUrl,userKey) {
-		$scope.init = function() {
-			var triviaType = random(triviaTypes);
-			var country = random(countryList);
-			$http
-				.get(baseUrl + triviaType.apiUrl, { params: {
-					variableId: triviaType.variableId,
-					filter: country.filter,
-					user_key: userKey
-				}})
-				.success(function(data) {
-					$scope.type = triviaType.type;
-					$scope.headline = triviaType.getHeadline(data);
-					$scope.text = triviaType.getText(country.name);
-				});
+	app.controller('TriviaController', ['$scope','triviaService', function($scope,triviaService) {
+		$scope.nextFact = function() {
+			triviaService.getFact(function(fact) {
+				$scope.fact = fact;
+			});
 		};
-		$scope.init();
+		$scope.nextFact();
 	}]);
 
 	app.controller('SurveyController', ['$scope','$http','questions','baseUrl','userKey',
