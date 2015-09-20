@@ -2,8 +2,8 @@
 	var appServices = angular.module('app.services',['app.config','underscore']);
 
 	appServices.factory('triviaService',
-		['$http','_','baseUrl','userKey','triviaTypes','countryList',
-			function($http,_,baseUrl,userKey,triviaTypes,countryList) {
+		['$http','_','baseUrl','userKey','triviaTypes',
+			function($http,_,baseUrl,userKey,triviaTypes) {
 		return {
 			types: _.shuffle(triviaTypes),
 			typeIndex: 0,
@@ -13,9 +13,14 @@
 				}
 				return this.types[this.typeIndex++];
 			},
-			getFact: function(cb) {
+			/**
+			 * Get a fact by a specific country
+			 *
+			 * @param {Object} country
+			 * @param {Function} cb
+			 */
+			getFact: function(country,cb) {
 				var triviaType = this.getType();
-				var country = _.shuffle(countryList)[0];
 				$http
 					.get(baseUrl + triviaType.apiUrl, { params: {
 						variableId: triviaType.variableId,

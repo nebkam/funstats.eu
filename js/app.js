@@ -13,7 +13,7 @@ window.random = function(arr) {
 		return $window._; // assumes underscore has already been loaded on the page
 	}]);
 
-	var app = angular.module('app', ['app.config','app.services','ngRoute']);
+	var app = angular.module('app', ['app.config','app.services','ngRoute','underscore']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
@@ -43,16 +43,28 @@ window.random = function(arr) {
 		};
 	}]);
 
-	app.controller('TriviaController', ['$scope','triviaService', function($scope,triviaService) {
+	app.controller('TriviaController',
+		['$scope','_','countryList','triviaService',
+			function($scope,_,countryList,triviaService) {
 		$scope.nextFact = function() {
-			$scope.compareCountries = [];
-			triviaService.getFact(function(fact) {
+			$scope.compareCountries = [];//reset
+			var country = _.shuffle(countryList)[0];
+			$scope.currentCountry = country;
+			triviaService.getFact(country,function(fact) {
 				$scope.fact = fact;
 			});
 		};
 		$scope.nextFact();
 		$scope.compare = function() {
-			console.log('im here');
+			angular.forEach(countryList,function(country) {
+				triviaService.getFact(country,function(fact) {
+					$scope.compareCountries.push({
+						name: country.name,
+						code: country.code.toLowerCase(),
+						headline: fact.headline
+					});
+				});
+			});
 		};
 	}]);
 

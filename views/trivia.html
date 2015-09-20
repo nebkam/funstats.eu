@@ -10,7 +10,7 @@
 	</div>
 	<div class="row v-offset-1" ng-show="compareCountries.length">
 		<table class="table table-striped">
-			<tr ng-repeat="country in compareCountries">
+			<tr ng-repeat="country in compareCountries" ng-class="{info: country.name == currentCountry.name}">
 				<td><img ng-src="/img/flags/{{ country.code }}.png" /></td>
 				<td>{{ country.name }}</td>
 				<td>{{ country.headline }}</td>
