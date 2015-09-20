@@ -45,11 +45,15 @@ window.random = function(arr) {
 
 	app.controller('TriviaController', ['$scope','triviaService', function($scope,triviaService) {
 		$scope.nextFact = function() {
+			$scope.compareCountries = [];
 			triviaService.getFact(function(fact) {
 				$scope.fact = fact;
 			});
 		};
 		$scope.nextFact();
+		$scope.compare = function() {
+			console.log('im here');
+		};
 	}]);
 
 	app.controller('SurveyController', ['$scope','$http','questions','baseUrl','userKey',
