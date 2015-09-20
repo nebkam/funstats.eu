@@ -593,6 +593,84 @@
 					"text" : "At no time"
 				}
 			]
-		}
+		},
+		{
+			"id" : 23,
+			"question" : "How satisfied are you with your present job? ",
+			"apiUrl" : "/TimeseriesFrequency?variableId=146",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "1 - Very dissatisfied"
+				},
+				{
+					"value" : 2,
+					"text" : "2"
+				},
+				{
+					"value" : 3,
+					"text" : "3"
+				},
+				{
+					"value" : 4,
+					"text" : "4"
+				},
+				{
+					"value" : 5,
+					"text" : "5"
+				},
+				{
+					"value" : 6,
+					"text" : "6"
+				},
+				{
+					"value" : 7,
+					"text" : "7"
+				},
+				{
+					"value" : 8,
+					"text" : "8"
+				},
+				{
+					"value" : 9,
+					"text" : "9"
+				},
+				{
+					"value" : 10,
+					"text" : "10 - Very satisfied"
+				}
+			]
+		},
+		{
+			"id" : 24,
+			"question" : "How often are you involved in activity outside of work? - Cooking and/or housework",
+			"apiUrl" : "/TimeseriesFrequency?variableId=177",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Every day"
+				},
+				{
+					"value" : 2,
+					"text" : "Several days a week"
+				},
+				{
+					"value" : 3,
+					"text" : "Once or twice a week"
+				},
+				{
+					"value" : 4,
+					"text" : "Less often"
+				},
+				{
+					"value" : 5,
+					"text" : "Never"
+				}
+			]
+		},
 	]
 }
