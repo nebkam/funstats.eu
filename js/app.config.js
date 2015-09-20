@@ -218,13 +218,13 @@
 		"code": "MK",
 		"filter": "2:30"
 	}, {
-		"name": "Kosovo",
-		"code": "RS",
-		"filter": "2:31"
-	}, {
 		"name": "Serbia",
 		"code": "RS",
 		"filter": "2:32"
+	}, {
+		"name": "Kosovo",
+		"code": "RS",
+		"filter": "2:31"
 	}, {
 		"name": "Montenegro",
 		"code": "ME",

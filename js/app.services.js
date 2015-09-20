@@ -59,4 +59,31 @@
 			}
 		};
 	}]);
+
+	appServices.factory('myCountryService', ['$http', function($http) {
+		return {
+			getCode: function(cb) {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function(position) {
+						$http.get('http://ws.geonames.org/countryCode', { params: {
+							lat: position.coords.latitude,
+							lng: position.coords.longitude,
+							type: 'JSON',
+							username: 'nebkam'
+						}}).then(function(res) {
+							if (res.data.countryCode) {
+								cb(res.data.countryCode.toLowerCase());
+							} else {
+								cb(null);
+							}
+						}, function() {
+							cb(null);
+						});
+					});
+				} else {
+					cb(null);
+				}
+			}
+		};
+	}]);
 })();

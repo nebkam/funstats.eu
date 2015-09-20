@@ -44,8 +44,11 @@ window.random = function(arr) {
 	}]);
 
 	app.controller('TriviaController',
-		['$scope','_','countryList','triviaService',
-			function($scope,_,countryList,triviaService) {
+		['$scope','_','countryList','triviaService','myCountryService',
+			function($scope,_,countryList,triviaService,myCountryService) {
+				myCountryService.getCode(function(code) {
+					$scope.myCountryCode = code;
+				});
 		$scope.nextFact = function() {
 			$scope.compareCountries = [];//reset
 			$scope.currentCountry = _.shuffle(countryList)[0];//generate random country
