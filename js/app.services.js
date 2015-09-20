@@ -22,7 +22,7 @@
 			getFact: function(country,triviaType,cb) {
 				var self = this;
 				$http
-					.get(baseUrl + triviaType.apiUrl, { params: {
+					.get(baseUrl + triviaType.apiUrl, { cache: true, params: {
 						variableId: triviaType.variableId,
 						filter: triviaType.filter+country.filter,
 						user_key: userKey
@@ -65,7 +65,7 @@
 			getCode: function(cb) {
 				if (navigator.geolocation) {
 					navigator.geolocation.getCurrentPosition(function(position) {
-						$http.get('http://ws.geonames.org/countryCode', { params: {
+						$http.get('http://ws.geonames.org/countryCode', { cache: true, params: {
 							lat: position.coords.latitude,
 							lng: position.coords.longitude,
 							type: 'JSON',
