@@ -1,13 +1,21 @@
 (function() {
-	var appServices = angular.module('app.services',['app.config']);
+	var appServices = angular.module('app.services',['app.config','underscore']);
 
 	appServices.factory('triviaService',
-		['$http','baseUrl','userKey','triviaTypes','countryList',
-			function($http,baseUrl,userKey,triviaTypes,countryList) {
+		['$http','_','baseUrl','userKey','triviaTypes','countryList',
+			function($http,_,baseUrl,userKey,triviaTypes,countryList) {
 		return {
+			types: _.shuffle(triviaTypes),
+			typeIndex: 0,
+			getType: function() {
+				if (this.typeIndex === this.types.length) {
+					this.typeIndex = 0;
+				}
+				return this.types[this.typeIndex++];
+			},
 			getFact: function(cb) {
-				var triviaType = random(triviaTypes);
-				var country = random(countryList);
+				var triviaType = this.getType();
+				var country = _.shuffle(countryList)[0];
 				$http
 					.get(baseUrl + triviaType.apiUrl, { params: {
 						variableId: triviaType.variableId,

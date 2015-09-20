@@ -8,6 +8,11 @@ window.random = function(arr) {
 };
 
 (function() {
+	var underscore = angular.module('underscore', []);
+	underscore.factory('_', ['$window', function($window) {
+		return $window._; // assumes underscore has already been loaded on the page
+	}]);
+
 	var app = angular.module('app', ['app.config','app.services','ngRoute']);
 
 	app.config(['$routeProvider', function($routeProvider) {
