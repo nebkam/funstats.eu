@@ -77,7 +77,7 @@
 		},
 		{
 			"id" : 4,
-			"question" : "Thinking of your immediate neighbourhood - do you have problems with: Air quality?",
+			"question" : "Thinking of your immediate neighbourhood - do you have problems with air quality?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=49",
 			"type" : "WeightedFrequency",
 			"topic" : "Social attitudes and behavior",
@@ -318,7 +318,7 @@
 		},
 		{
 			"id" : 13,
-			"question" : "Over the last 12 months, have you: Attended a protest or demonstration?",
+			"question" : "Over the last 12 months, have you attended a protest or demonstration?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=55",
 			"type" : "TimeseriesFrequency",
 			"topic" : "Politics - political behavior and attitudes",
@@ -431,7 +431,7 @@
 		},
 		{
 			"id" : 18,
-			"question" : "How would you describe your access to: Banking services?",
+			"question" : "How would you describe your access to banking services?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=61",
 			"type" : "TimeseriesFrequency",
 			"topic" : "Society and culture - Soacial attitudes and behavior",
@@ -671,6 +671,6 @@
 					"text" : "Never"
 				}
 			]
-		},
+		}
 	]
 }
