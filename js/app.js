@@ -18,7 +18,7 @@ window.random = function(arr) {
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 			.when('/challenge', {
-				templateUrl: 'views/challenge.html',
+				templateUrl: 'views/challenge.html'
 			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'

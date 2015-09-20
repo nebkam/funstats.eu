@@ -101,7 +101,7 @@
 			"question" : "What is your age?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=12",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Social stratification and grouping",
+			"topic" : "Social stratification and groupings",
 			"answers" : [
 				{ 
 					"value" : 1,
@@ -359,6 +359,238 @@
 				{
 					"value" : 5,
 					"text" : "Strongly disagree"
+				}
+			]
+		},
+		{
+			"id" : 15,
+			"question" : "Who is a person to get support from when feeling depressed?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=34",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Social stratification and groupings - Familiy life and mariage",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "A member of your family / relative"
+				},
+				{
+					"value" : 2,
+					"text" : "A friend, neighbour, or someone else, who does not belong to"
+				},
+				{
+					"value" : 3,
+					"text" : "A service provider, institution or organisation"
+				}
+			]
+		},
+		{
+			"id" : 16,
+			"question" : "Who is a person to get support from to help around the house?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=31",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Social stratification and groupings - Familiy life and mariage",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "A member of your family / relative"
+				},
+				{
+					"value" : 2,
+					"text" : "A friend, neighbour, or someone else, who does not belong to"
+				},
+				{
+					"value" : 3,
+					"text" : "A service provider, institution or organisation"
+				},
+				{
+					"value" : 4,
+					"text" : "Nobody"
+				}
+			]
+		},
+		{
+			"id" : 17,
+			"question" : "Thinking of your immediate neighbourhood - do you have problems with traffic congestion?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=53",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Social stratification and groupings - Familiy life and mariage",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Major problems"
+				},
+				{
+					"value" : 2,
+					"text" : "Moderate problems"
+				},
+				{
+					"value" : 3,
+					"text" : "No problems"
+				}
+			]
+		},
+		{
+			"id" : 18,
+			"question" : "How would you describe your access to: Banking services?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=61",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "With great difficulty"
+				},
+				{
+					"value" : 2,
+					"text" : "With some difficulty"
+				},
+				{
+					"value" : 3,
+					"text" : "Easily"
+				},
+				{
+					"value" : 4,
+					"text" : "Very easily"
+				},
+				{
+					"value" : 5,
+					"text" : "Service not used"
+				}
+			]
+		},
+		{
+			"id" : 19,
+			"question" : "Would you say that most people can be trusted? (on a scale of 1 to 10)",
+			"apiUrl" : "/TimeseriesFrequency?variableId=91",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "1 - You can’t be too careful"
+				},
+				{
+					"value" : 2,
+					"text" : "2"
+				},
+				{
+					"value" : 3,
+					"text" : "3"
+				},
+				{
+					"value" : 4,
+					"text" : "4"
+				},
+				{
+					"value" : 5,
+					"text" : "5"
+				},
+				{
+					"value" : 6,
+					"text" : "6"
+				},
+				{
+					"value" : 7,
+					"text" : "7"
+				},
+				{
+					"value" : 8,
+					"text" : "8"
+				},
+				{
+					"value" : 9,
+					"text" : "9"
+				},
+				{
+					"value" : 10,
+					"text" : "10 - Most people can be trusted"
+				}
+			]
+		},
+		{
+			"id" : 20,
+			"question" : "How frequently do you use the Internet other than for work?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=106",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Every day or almost every day"
+				},
+				{
+					"value" : 2,
+					"text" : "At least once a week"
+				},
+				{
+					"value" : 3,
+					"text" : "One to three times a month"
+				},
+				{
+					"value" : 4,
+					"text" : "Less often"
+				},
+				{
+					"value" : 5,
+					"text" : "Never"
+				}
+			]
+		},
+		{
+			"id" : 21,
+			"question" : "How often worked unpaid for community services last 12 months?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=109",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "Every week"
+				},
+				{
+					"value" : 2,
+					"text" : "Every month"
+				},
+				{
+					"value" : 3,
+					"text" : "Less often/occasionally"
+				},
+				{
+					"value" : 4,
+					"text" : "Not at all"
+				}
+			]
+		},
+		{
+			"id" : 22,
+			"question" : "How often woke up feeling fresh and rested last 2 weeks?",
+			"apiUrl" : "/TimeseriesFrequency?variableId=157",
+			"type" : "TimeseriesFrequency",
+			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"answers" : [
+				{ 
+					"value" : 1,
+				 	"text" : "All of the time"
+				},
+				{
+					"value" : 2,
+					"text" : "Most of the time"
+				},
+				{
+					"value" : 3,
+					"text" : "More than half of the time"
+				},
+				{
+					"value" : 4,
+					"text" : "Less than half of the time"
+				},
+				{
+					"value" : 5,
+					"text" : "Some of the time"
+				},
+				{
+					"value" : 6,
+					"text" : "At no time"
 				}
 			]
 		}
