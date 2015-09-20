@@ -6,7 +6,7 @@
 	<form>
 		<div class="radio" ng-repeat="answer in answers">
 			<label>
-				<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{question.value}}" ng-click="setSelected(question.value);">
+				<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{answer.value}}" ng-click="setSelected(answer.value);">
 				{{answer.text}}
 			</label>
 		</div>
@@ -14,5 +14,9 @@
 	<div class="row">
 		<button type="button" class="btn btn-primary" ng-click="submit();">Submit</button>
 		<button type="button" class="btn btn-default" onclick="window.location.reload();">Skip</button>
+	</div>
+	<div class="row" ng-show="percentage">
+		<h1>There is {{ percentage }} of people in EU with the same answer as yours</h1>
+		<button type="button" class="btn btn-primary" onclick="window.location.reload();">Next question</button>
 	</div>
 </div>

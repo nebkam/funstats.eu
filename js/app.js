@@ -63,21 +63,34 @@ window.random = function(arr) {
 		$scope.question = '';
 		$scope.answers = [];
 		$scope.apiUrl = '';
-
+		$scope.percentage = 0;
 		questions.pickRandom(function(random) {
 			$scope.question = random.question;
 			$scope.answers = random.answers;
 			$scope.apiUrl = random.apiUrl;
+			$scope.type = random.type;
 		});
 
 		$scope.setSelected = function(value) {
 			$scope.selected = value;
 		};
-		$scope.submit = function() {
+		$scope.submit = function() {			
+			total = 0;
 			$http
 				.get(baseUrl + $scope.apiUrl + '&user_key=' + userKey)
 				.success(function(res) {
-					console.log(res);
+					if ($scope.type == 'TimeseriesFrequency'){
+						angular.forEach(res.TimeSeries, function(value, key){
+							if (value.Year == 2011){
+								total = total + value.WeightedFrequency;	
+								if (value.Value == $scope.selected){
+									myAnswerVal = value.WeightedFrequency;
+								}
+							}						
+						});
+					
+					$scope.percentage = Math.round((myAnswerVal/total) * 100)+'%';	
+					}
 				});
 		};
 	}]);
