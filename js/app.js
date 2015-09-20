@@ -18,7 +18,7 @@ window.random = function(arr) {
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 			.when('/challenge', {
-				templateUrl: 'views/challenge.html'
+				templateUrl: 'views/challenge.html',
 			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'
@@ -89,19 +89,25 @@ window.random = function(arr) {
 			$http
 				.get(baseUrl + $scope.apiUrl + '&user_key=' + userKey)
 				.success(function(res) {
-					if ($scope.type == 'TimeseriesFrequency'){
-						angular.forEach(res.TimeSeries, function(value, key){
-							if (value.Year == 2011){
-								total = total + value.WeightedFrequency;	
-								if (value.Value == $scope.selected){
-									myAnswerVal = value.WeightedFrequency;
-								}
-							}						
-						});
-					
-					$scope.percentage = Math.round((myAnswerVal/total) * 100)+'%';	
-					}
+					angular.forEach(res.TimeSeries, function(value, key){
+						if (value.Year == 2011){
+							total = total + value.WeightedFrequency;	
+							if (value.Value == $scope.selected){
+								myAnswerVal = value.WeightedFrequency;
+							}
+						}						
+					});
+				
+				$scope.percentage = Math.round((myAnswerVal/total) * 100)+'%';	
 				});
 		};
 	}]);
+
+	app.controller('HeaderController', ['$scope', '$location',
+			function($scope, $location) {
+				 $scope.isActive = function (viewLocation) { 
+       			 return viewLocation === $location.path();
+   				 };
+			}
+		]);
 })();

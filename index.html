@@ -9,14 +9,14 @@
 		<link rel="stylesheet" href="./css/app.css">
 	</head>
 	<body ng-app="app">
-
-	<ul class="nav nav-pills nav-justified">
-		<li role="presentation"><a href="#home">Home</a></li>
-		<li role="presentation"><a href="#survey">Survey</a></li>
-		<li role="presentation"><a href="#challenge">Challenge a Friend</a></li>
-		<li role="presentation"><a href="#trivia">Did you know..?</a></li>
-	</ul>
-
+	<div ng-controller="HeaderController">	
+		<ul class="nav nav-pills nav-justified">
+			<li role="presentation" ng-class="{ active: isActive('/home')}"><a href="#home">Home</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/survey')}"><a href="#survey">Survey</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/challenge')}"><a href="#challenge">Challenge a Friend</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/trivia')}"><a href="#trivia">Did you know..?</a></li>
+		</ul>
+	</div>	
 	<div ng-view></div>
 
 	<script type="text/javascript" src="./js/angular-1.4.5.min.js"></script>
