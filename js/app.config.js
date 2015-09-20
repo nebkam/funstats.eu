@@ -9,19 +9,7 @@
 		type: "single-women",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 3,
-		getHeadline: function(data) {
-			var total = 0;
-			var partial = 0;
-			var value = 4.0;
-			for (var i in data.TimeSeries) {
-				var item = data.TimeSeries[i];
-				total += item.WeightedFrequency;
-				if (item.Value == value) {
-					partial += item.WeightedFrequency;
-				}
-			}
-			return Math.round((partial/total) * 100)+'%';
-		},
+		option: 4.0,
 		getText: function(country) {
 			return 'of women in '+ country +' are single';
 		}
@@ -29,19 +17,7 @@
 		type: "doesnt-go-to-church",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 105,
-		getHeadline: function(data) {
-			var total = 0;
-			var partial = 0;
-			var value = 5.0;
-			for (var i in data.TimeSeries) {
-				var item = data.TimeSeries[i];
-				total += item.WeightedFrequency;
-				if (item.Value == value) {
-					partial += item.WeightedFrequency;
-				}
-			}
-			return Math.round((partial/total) * 100)+'%';
-		},
+		option: 5.0,
 		getText: function(country) {
 			return 'of people in '+ country +' never go to church';
 		}
@@ -49,19 +25,7 @@
 		type: "doesnt-trust-gov",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 103,
-		getHeadline: function(data) {
-			var total = 0;
-			var partial = 0;
-			var value = 1.0;
-			for (var i in data.TimeSeries) {
-				var item = data.TimeSeries[i];
-				total += item.WeightedFrequency;
-				if (item.Value == value) {
-					partial += item.WeightedFrequency;
-				}
-			}
-			return Math.round((partial/total) * 100)+'%';
-		},
+		option: 1.0,
 		getText: function(country) {
 			return 'of people in '+ country +' don\'t trust their government';
 		}
@@ -69,19 +33,7 @@
 		type: "owns-his-house",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 40,
-		getHeadline: function(data) {
-			var total = 0;
-			var partial = 0;
-			var value = 1.0;
-			for (var i in data.TimeSeries) {
-				var item = data.TimeSeries[i];
-				total += item.WeightedFrequency;
-				if (item.Value == value) {
-					partial += item.WeightedFrequency;
-				}
-			}
-			return Math.round((partial/total) * 100)+'%';
-		},
+		option: 1.0,
 		getText: function(country) {
 			return 'of people in '+ country +' own their own house (without mortgage)';
 		}

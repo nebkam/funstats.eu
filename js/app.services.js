@@ -15,12 +15,12 @@
 			},
 			/**
 			 * Get a fact by a specific country
-			 *
 			 * @param {Object} country
 			 * @param {Function} cb
 			 */
 			getFact: function(country,cb) {
-				var triviaType = this.getType();
+				var self = this,
+					triviaType = this.getType();
 				$http
 					.get(baseUrl + triviaType.apiUrl, { params: {
 						variableId: triviaType.variableId,
@@ -30,11 +30,29 @@
 					.success(function(data) {
 						var fact = {
 							type: triviaType.type,
-							headline: triviaType.getHeadline(data),
+							headline: self.getPercent(data.TimeSeries,triviaType.option)+'%',
 							text: triviaType.getText(country.name)
 						};
 						cb(fact);
 					});
+			},
+			/**
+			 * Calculate percent from TimeSeries data
+			 * @param {Array} data
+			 * @param {Number} option
+			 * @return {Number}
+			 */
+			getPercent: function(data,option) {
+				var total = 0;
+				var partial = 0;
+				for (var i in data) {
+					var item = data[i];
+					total += item.WeightedFrequency;
+					if (item.Value == option) {
+						partial += item.WeightedFrequency;
+					}
+				}
+				return Math.round((partial/total) * 100);
 			}
 		};
 	}]);
