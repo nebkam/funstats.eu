@@ -9,15 +9,27 @@
 		type: "single-women",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 3,
+		filter: "13:2|",
 		option: 4.0,
 		getHeadline: function(country) {
 			return 'of women in '+ country +' are single';
+		},
+		subtitle: "Never married and not living with a partner"
+	},{
+		type: "single-men",
+		apiUrl: "/TimeseriesFrequency",
+		variableId: 3,
+		filter: "13:1|",
+		option: 4.0,
+		getHeadline: function(country) {
+			return 'of men in '+ country +' are single';
 		},
 		subtitle: "Never married and not living with a partner"
 	}, {
 		type: "doesnt-go-to-church",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 105,
+		filter: "",
 		option: 5.0,
 		getHeadline: function(country) {
 			return 'of people in '+ country +' never go to church';
@@ -27,6 +39,7 @@
 		type: "doesnt-trust-gov",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 103,
+		filter: "",
 		option: 1.0,
 		getHeadline: function(country) {
 			return 'of people in '+ country +' don\'t trust their government';
@@ -36,6 +49,7 @@
 		type: "owns-his-house",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 40,
+		filter: "",
 		option: 1.0,
 		getHeadline: function(country) {
 			return 'of people in '+ country +' own their own house';
@@ -45,6 +59,7 @@
 		type: "finished-primary-school",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 5,
+		filter: "",
 		option: 2.0,
 		getHeadline: function(country) {
 			return 'of people in '+ country +' completed only primary school';
@@ -54,6 +69,7 @@
 		type: "lives-in-city",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 6,
+		filter: "",
 		option: 4.0,
 		getHeadline: function(country) {
 			return 'of people in '+country+' live in cities and their suburbs';

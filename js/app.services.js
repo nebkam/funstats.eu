@@ -24,7 +24,7 @@
 				$http
 					.get(baseUrl + triviaType.apiUrl, { params: {
 						variableId: triviaType.variableId,
-						filter: country.filter,
+						filter: triviaType.filter+country.filter,
 						user_key: userKey
 					}})
 					.success(function(data) {
