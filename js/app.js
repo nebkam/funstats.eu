@@ -48,16 +48,16 @@ window.random = function(arr) {
 			function($scope,_,countryList,triviaService) {
 		$scope.nextFact = function() {
 			$scope.compareCountries = [];//reset
-			var country = _.shuffle(countryList)[0];
-			$scope.currentCountry = country;
-			triviaService.getFact(country,function(fact) {
+			$scope.currentCountry = _.shuffle(countryList)[0];//generate random country
+			$scope.triviaType = triviaService.getType();//generate pseudo-random type
+			triviaService.getFact($scope.currentCountry,$scope.triviaType,function(fact) {
 				$scope.fact = fact;
 			});
 		};
 		$scope.nextFact();
 		$scope.compare = function() {
 			angular.forEach(countryList,function(country) {
-				triviaService.getFact(country,function(fact) {
+				triviaService.getFact(country,$scope.triviaType,function(fact) {
 					$scope.compareCountries.push({
 						name: country.name,
 						code: country.code.toLowerCase(),

@@ -14,13 +14,13 @@
 				return this.types[this.typeIndex++];
 			},
 			/**
-			 * Get a fact by a specific country
+			 * Get a fact of a specific type for a specific country
 			 * @param {Object} country
+			 * @param {Object} triviaType
 			 * @param {Function} cb
 			 */
-			getFact: function(country,cb) {
-				var self = this,
-					triviaType = this.getType();
+			getFact: function(country,triviaType,cb) {
+				var self = this;
 				$http
 					.get(baseUrl + triviaType.apiUrl, { params: {
 						variableId: triviaType.variableId,
