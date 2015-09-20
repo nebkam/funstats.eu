@@ -10,33 +10,55 @@
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 3,
 		option: 4.0,
-		getText: function(country) {
+		getHeadline: function(country) {
 			return 'of women in '+ country +' are single';
-		}
+		},
+		subtitle: "Never married and not living with a partner"
 	}, {
 		type: "doesnt-go-to-church",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 105,
 		option: 5.0,
-		getText: function(country) {
+		getHeadline: function(country) {
 			return 'of people in '+ country +' never go to church';
-		}
+		},
+		subtitle: "Never attend religious services, apart from weddings, funerals or christenings"
 	}, {
 		type: "doesnt-trust-gov",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 103,
 		option: 1.0,
-		getText: function(country) {
+		getHeadline: function(country) {
 			return 'of people in '+ country +' don\'t trust their government';
-		}
+		},
+		subtitle: "On a scale 1-10, they chose 1 (Not at all)"
 	}, {
 		type: "owns-his-house",
 		apiUrl: "/TimeseriesFrequency",
 		variableId: 40,
 		option: 1.0,
-		getText: function(country) {
-			return 'of people in '+ country +' own their own house (without mortgage)';
-		}
+		getHeadline: function(country) {
+			return 'of people in '+ country +' own their own house';
+		},
+		subtitle: "Without mortgage (i.e. without any loans)"
+	}, {
+		type: "finished-primary-school",
+		apiUrl: "/TimeseriesFrequency",
+		variableId: 5,
+		option: 2.0,
+		getHeadline: function(country) {
+			return 'of people in '+ country +' completed only primary school';
+		},
+		subtitle: "Primary education (ISCED 1)"
+	}, {
+		type: "lives-in-city",
+		apiUrl: "/TimeseriesFrequency",
+		variableId: 6,
+		option: 4.0,
+		getHeadline: function(country) {
+			return 'of people in '+country+' live in cities and their suburbs';
+		},
+		subtitle: "As opposed to the ones in towns, villages and on the countryside"
 	}]);
 
 	appConfig.constant('countryList', [{

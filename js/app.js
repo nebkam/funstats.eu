@@ -35,7 +35,7 @@ window.random = function(arr) {
 		return {
 			pickRandom: function(cb) {
 				$http
-					.get('/data/questions.json')//TODO caching?
+					.get('/data/questions.json')
 					.success(function(data) {
 						cb( random(data.questions) );
 					});
@@ -61,7 +61,7 @@ window.random = function(arr) {
 					$scope.compareCountries.push({
 						name: country.name,
 						code: country.code.toLowerCase(),
-						headline: fact.headline
+						percent: fact.percent
 					});
 				});
 			});

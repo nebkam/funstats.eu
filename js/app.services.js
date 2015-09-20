@@ -30,9 +30,12 @@
 					.success(function(data) {
 						var fact = {
 							type: triviaType.type,
-							headline: self.getPercent(data.TimeSeries,triviaType.option)+'%',
-							text: triviaType.getText(country.name)
+							percent: self.getPercent(data.TimeSeries,triviaType.option),
+							headline: triviaType.getHeadline(country.name)
 						};
+						if (triviaType.subtitle) {
+							fact.subtitle = triviaType.subtitle;
+						}
 						cb(fact);
 					});
 			},
