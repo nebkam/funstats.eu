@@ -75,6 +75,26 @@
 			return 'of people in '+country+' live in cities and their suburbs';
 		},
 		subtitle: "As opposed to the ones in towns, villages and on the countryside"
+	}, {
+		type: "unemployed-youth",
+		apiUrl: "/TimeseriesFrequency",
+		variableId: 6,
+		filter: "12:2|",
+		option: 2.0,
+		getHeadline: function(country) {
+			return 'of young people in '+country+' are unemployed';
+		},
+		subtitle: "Aged 25-35"
+	}, {
+		type: "cant-afford-vacation",
+		apiUrl: "/TimeseriesFrequency",
+		variableId: 128,
+		filter: "",
+		option: 2.0,
+		getHeadline: function(country) {
+			return 'of people in '+country+' can\'t afford a vacation';
+		},
+		subtitle: "Pay for a week's annual holiday away"
 	}]);
 
 	appConfig.constant('countryList', [{
