@@ -46,6 +46,7 @@
 					$scope.currentCountry = _.shuffle(countryList)[0];//generate random country
 					$scope.triviaType = triviaService.getType();//generate pseudo-random type
 					triviaService.getFact($scope.currentCountry,$scope.triviaType,function(fact) {
+						fact.tweet = encodeURIComponent(fact.percent+'% '+fact.headline+' #EULife');
 						$scope.fact = fact;
 						$scope.isLoading = false;
 					});

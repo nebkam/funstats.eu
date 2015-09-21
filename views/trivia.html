@@ -10,6 +10,7 @@
 			<h2>{{fact.percent}}%</h2>
 			<p class="lead">{{fact.headline}}</p>
 			<p ng-show="fact.subtitle.length"><small>{{fact.subtitle}}</small></p>
+			<p><a target="_blank" ng-href="https://twitter.com/intent/tweet?text={{ fact.tweet }}&via=AppChallenge">Tweet</a></p>
 		</div>
 	</div>
 	<div class="row v-offset-1" ng-show="compareCountries.length">
