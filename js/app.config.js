@@ -36,7 +36,7 @@
 			"question" : "What is your martial status?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=3",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Family life and mariage",
+			"topic" : "Social stratification and groupings - Family life and mariage",
 			"answers" : [
 				{
 					"value" : 1,
@@ -61,7 +61,7 @@
 			"question" : "The area in which you live is ... ?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=6",
 			"type" : "WeightedFrequency",
-			"topic" : "Environment, conservation and land use",
+			"topic" : "Environment, conservation and land use - Land use and planning",
 			"answers" : [
 				{
 					"value" : 1,
@@ -86,7 +86,7 @@
 			"question" : "Thinking of your immediate neighbourhood - do you have problems with air quality?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=49",
 			"type" : "WeightedFrequency",
-			"topic" : "Social attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behaviour",
 			"answers" : [
 				{
 					"value" : 1,
@@ -107,7 +107,7 @@
 			"question" : "What is your age?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=12",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Social stratification and groupings",
+			"topic" : "Social stratification and groupings - General",
 			"answers" : [
 				{
 					"value" : 1,
@@ -165,7 +165,7 @@
 			"question" : "What is your employment status?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=18",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Employment and labour - general",
+			"topic" : "Employment and labour - General",
 			"answers" : [
 				{
 					"value" : 1,
@@ -202,7 +202,7 @@
 			"question" : "Financial situation of your household compared to 12 months ago?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=137",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Economics",
+			"topic" : "Economics - Income, property and investment",
 			"answers" : [
 				{
 					"value" : 1,
@@ -223,7 +223,7 @@
 			"question" : "What is your health condition?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=36",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Health",
+			"topic" : "Health - General",
 			"answers" : [
 				{
 					"value" : 1,
@@ -252,7 +252,7 @@
 			"question" : "Are you limited in your daily activities by this physical or mental health problem, illness or disability?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=38",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Health - Specific diseases",
+			"topic" : "Health - Specific diseases and medical conditions",
 			"answers" : [
 				{
 					"value" : 1,
@@ -306,7 +306,7 @@
 			"question" : "Difficult to see a doctor because of distance?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=55",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Health - Services",
+			"topic" : "Health - Health services and medical",
 			"answers" : [
 				{
 					"value" : 1,
@@ -327,7 +327,7 @@
 			"question" : "Over the last 12 months, have you attended a protest or demonstration?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=55",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Politics - political behavior and attitudes",
+			"topic" : "Politics - Political behaviour and attitudes",
 			"answers" : [
 				{
 					"value" : 1,
@@ -419,7 +419,7 @@
 			"question" : "Thinking of your immediate neighbourhood - do you have problems with traffic congestion?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=53",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Social stratification and groupings - Familiy life and mariage",
+			"topic" : "Society and culture - Social indicators and quality of life",
 			"answers" : [
 				{
 					"value" : 1,
@@ -440,7 +440,7 @@
 			"question" : "How would you describe your access to banking services?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=61",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behaviour",
 			"answers" : [
 				{
 					"value" : 1,
@@ -469,7 +469,7 @@
 			"question" : "Would you say that most people can be trusted? (on a scale of 1 to 10)",
 			"apiUrl" : "/TimeseriesFrequency?variableId=91",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behaviour",
 			"answers" : [
 				{
 					"value" : 1,
@@ -518,7 +518,7 @@
 			"question" : "How frequently do you use the Internet other than for work?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=106",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behavior",
 			"answers" : [
 				{
 					"value" : 1,
@@ -547,7 +547,7 @@
 			"question" : "How often worked unpaid for community services last 12 months?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=109",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behavior",
 			"answers" : [
 				{
 					"value" : 1,
@@ -572,7 +572,7 @@
 			"question" : "How often woke up feeling fresh and rested last 2 weeks?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=157",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"topic" : "Society and culture - Social indicators and quality of life",
 			"answers" : [
 				{
 					"value" : 1,
@@ -605,7 +605,7 @@
 			"question" : "How satisfied are you with your present job? ",
 			"apiUrl" : "/TimeseriesFrequency?variableId=146",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"topic" : "Society and culture - Social indicators and quality of life",
 			"answers" : [
 				{
 					"value" : 1,
@@ -654,7 +654,7 @@
 			"question" : "How often are you involved in activity outside of work? - Cooking and/or housework",
 			"apiUrl" : "/TimeseriesFrequency?variableId=177",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Soacial indicators and quality of life",
+			"topic" : "Society and culture - Social indicators and quality of life",
 			"answers" : [
 				{
 					"value" : 1,
@@ -682,7 +682,7 @@
 
 	appConfig.constant('surveyTopics', [
 		{
-			"title": "Social Stratification and groupings – Family life and marriage",
+			"title": "Social stratification and groupings – Family life and marriage",
 			"icon": "glyphicon-heart"
 		},
 		{
