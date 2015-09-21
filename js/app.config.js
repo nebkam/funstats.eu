@@ -976,4 +976,34 @@
 		"code": "NO",
 		"filter": "2:35"
 	}]);
+
+	appConfig.constant('ageGroups', [{
+		name: "20-something",
+		range: "18-24",
+		filter: "12:1"
+	}, {
+		name: "30-something",
+		range: "25-34",
+		filter: "12:2"
+	}, {
+		name: "40-something",
+		range: "35-49",
+		filter: "12:3"
+	}, {
+		name: "50-something",
+		range: "50-64",
+		filter: "12:4"
+	}, {
+		name: "over 65",
+		range: "65+",
+		filter: "12:5"
+	}]);
+
+	appConfig.constant('genders', [{
+		name: "man",
+		filter: "13:1"
+	}, {
+		name: "woman",
+		filter: "13:2"
+	}]);
 })();
