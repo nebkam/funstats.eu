@@ -19,8 +19,10 @@
 				$scope.selected = value;
 			};
 			$scope.submit = function() {
+				$scope.isLoading = true;
 				questionsService.getPercent($scope.apiUrl,$scope.selected,function(percent) {
 					$scope.percentage = percent;
+					$scope.isLoading = false;
 				});
 			};
 		}]);

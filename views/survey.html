@@ -1,22 +1,37 @@
 <div class="container-fluid" ng-controller="SurveyController">
-	<h1><span class="glyphicon glyphicon-gbp"></span></h1>
-	<h2>
-		{{question}}
-	</h2>
-	<form>
-		<div class="radio" ng-repeat="answer in answers">
-			<label>
-				<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{answer.value}}" ng-click="setSelected(answer.value);">
-				{{answer.text}}
-			</label>
-		</div>
-	</form>
-	<div class="row">
-		<button type="button" class="btn btn-primary" ng-click="submit();">Submit</button>
-		<button type="button" class="btn btn-default" ng-click="nextQuestion();">Skip</button>
+	<div class="row text-center" ng-show="isLoading">
+		<div class="timer-loader v-offset-1"></div>
 	</div>
-	<div class="row" ng-show="percentage">
-		<h1>There is {{ percentage }}% of people in EU with the same answer as yours</h1>
-		<button type="button" class="btn btn-primary" ng-click="nextQuestion();">Next question</button>
+	<div class="row" ng-hide="isLoading || percentage">
+		<h1 class="text-center">
+			<span class="glyphicon glyphicon-gbp"></span>
+		</h1>
+		<p class="lead text-center">
+			{{question}}
+		</p>
+		<form>
+			<div class="radio" ng-repeat="answer in answers">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{answer.value}}" ng-click="setSelected(answer.value);">
+					{{answer.text}}
+				</label>
+			</div>
+		</form>
+	</div>
+	<div class="row" ng-hide="isLoading || percentage">
+		<div class="col-xs-6 text-center">
+			<button type="button" class="btn btn-default btn-block" ng-click="nextQuestion();">Skip</button>
+		</div>
+		<div class="col-xs-6 text-center">
+			<button type="button" class="btn btn-primary btn-block" ng-click="submit();">Submit</button>
+		</div>
+	</div>
+	<div class="row text-center" ng-show="percentage">
+		<p class="lead">There is {{ percentage }}% of people in EU that answered &quot;{{ similarAnswer }}&quot;</p>
+	</div>
+	<div class="row text-center" ng-show="percentage">
+		<div class="col-xs-6 col-xs-offset-6 text-center">
+			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next question</button>
+		</div>
 	</div>
 </div>
