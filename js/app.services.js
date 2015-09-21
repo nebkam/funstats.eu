@@ -86,4 +86,33 @@
 			}
 		};
 	}]);
+
+	appServices.factory('questionsService', ['$http','_','surveyQuestions','baseUrl','userKey', function($http,_,surveyQuestions,baseUrl,userKey) {
+		return {
+			pickRandom: function() {
+				return _.shuffle(surveyQuestions)[0];
+			},
+			/**
+			 * @param {String} apiUrl
+			 * @param {Function} cb
+			 */
+			getPercent: function(apiUrl,cb) {
+				var total = 0,
+					myAnswerVal = 0;
+				$http
+					.get(baseUrl + apiUrl + '&user_key=' + userKey)
+					.success(function(res) {
+						angular.forEach(res.TimeSeries, function(value, key){
+							if (value.Year == 2011) {
+								total = total + value.WeightedFrequency;
+								if (value.Value == $scope.selected) {
+									myAnswerVal = value.WeightedFrequency;
+								}
+							}
+						});
+						cb( Math.round((myAnswerVal/total) * 100) );
+					});
+			}
+		};
+	}]);
 })();
