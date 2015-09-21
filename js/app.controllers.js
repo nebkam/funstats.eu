@@ -1,13 +1,14 @@
 (function() {
 	var appControllers = angular.module('app.controllers',['app.services','app.config','underscore']);
 
-	appControllers.controller('SurveyController', ['$scope','questionsService',
-		function($scope,questionsService) {
+	appControllers.controller('SurveyController', ['$scope','_','questionsService',
+		function($scope,_,questionsService) {
 			$scope.nextQuestion = function() {
 				$scope.question = '';
 				$scope.answers = [];
 				$scope.apiUrl = '';
 				$scope.percentage = 0;
+				$scope.similarAnswer = '';
 				var random = questionsService.pickRandom();
 				$scope.question = random.question;
 				$scope.answers = random.answers;
@@ -20,6 +21,8 @@
 			};
 			$scope.submit = function() {
 				$scope.isLoading = true;
+				var selectedOption = _.where($scope.answers,{ value: $scope.selected });
+				$scope.similarAnswer = selectedOption[0].text;
 				questionsService.getPercent($scope.apiUrl,$scope.selected,function(percent) {
 					$scope.percentage = percent;
 					$scope.isLoading = false;
