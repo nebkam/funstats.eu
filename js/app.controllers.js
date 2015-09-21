@@ -1,9 +1,10 @@
 (function() {
 	var appControllers = angular.module('app.controllers',['app.services','app.config','underscore']);
 
-	appControllers.controller('SurveyController', ['$scope','_','questionsService',
-		function($scope,_,questionsService) {
+	appControllers.controller('SurveyController', ['$scope','_','questionsService','surveyTopics',
+		function($scope,_,questionsService,surveyTopics) {
 			$scope.nextQuestion = function() {
+				$scope.icon = 'glyphicon-gbp';
 				$scope.question = '';
 				$scope.answers = [];
 				$scope.apiUrl = '';
@@ -14,6 +15,10 @@
 				$scope.answers = random.answers;
 				$scope.apiUrl = random.apiUrl;
 				$scope.type = random.type;
+				//var topic = _.where(surveyTopics, { title: random.topic });
+				//if (topic) {
+					//$scope.icon = topic[0].icon;
+				//}
 			};
 			$scope.nextQuestion();
 			$scope.setSelected = function(value) {
