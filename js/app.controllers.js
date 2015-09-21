@@ -4,22 +4,19 @@
 	appControllers.controller('SurveyController', ['$scope','_','questionsService','surveyTopics',
 		function($scope,_,questionsService,surveyTopics) {
 			$scope.nextQuestion = function() {
-				$scope.icon = 'glyphicon-gbp';
-				$scope.question = '';
-				$scope.answers = [];
-				$scope.apiUrl = '';
-				$scope.percentage = 0;
-				$scope.selected = 0;
-				$scope.similarAnswer = '';
 				var random = questionsService.pickRandom();
 				$scope.question = random.question;
 				$scope.answers = random.answers;
 				$scope.apiUrl = random.apiUrl;
 				$scope.type = random.type;
-				//var topic = _.where(surveyTopics, { title: random.topic });
-				//if (topic) {
-					//$scope.icon = topic[0].icon;
-				//}
+				var topic = _.where(surveyTopics, { title: random.topic });
+				if (topic[0]) {
+					$scope.icon = topic[0].icon;
+				}
+				//Reset
+				$scope.percentage = 0;
+				$scope.selected = 0;
+				$scope.similarAnswer = '';
 			};
 			$scope.nextQuestion();
 			$scope.setSelected = function(value) {

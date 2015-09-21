@@ -36,7 +36,7 @@
 			"question" : "What is your martial status?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=3",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Social stratification and groupings - Family life and mariage",
+			"topic" : "Social stratification and groupings - Family life and marriage",
 			"answers" : [
 				{
 					"value" : 1,
@@ -518,7 +518,7 @@
 			"question" : "How frequently do you use the Internet other than for work?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=106",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Social attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behaviour",
 			"answers" : [
 				{
 					"value" : 1,
@@ -547,7 +547,7 @@
 			"question" : "How often worked unpaid for community services last 12 months?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=109",
 			"type" : "TimeseriesFrequency",
-			"topic" : "Society and culture - Social attitudes and behavior",
+			"topic" : "Society and culture - Social attitudes and behaviour",
 			"answers" : [
 				{
 					"value" : 1,
@@ -682,39 +682,39 @@
 
 	appConfig.constant('surveyTopics', [
 		{
-			"title": "Social stratification and groupings – Family life and marriage",
+			"title": "Social stratification and groupings - Family life and marriage",
 			"icon": "glyphicon-heart"
 		},
 		{
-			"title": "Education – Higher and further",
+			"title": "Education - Higher and further",
 			"icon": "glyphicon-education"
 		},
 		{
-			"title": "Environment, conservation and land use – Land use and planning",
+			"title": "Environment, conservation and land use - Land use and planning",
 			"icon": "glyphicon-tree-conifer"
 		},
 		{
-			"title": "Society and culture – Social attitudes and behaviour",
+			"title": "Society and culture - Social attitudes and behaviour",
 			"icon": "glyphicon-thumbs-up"
 		},
 		{
-			"title": "Social stratification and groupings – General",
+			"title": "Social stratification and groupings - General",
 			"icon": "glyphicon-user"
 		},
 		{
-			"title": "Education – general",
+			"title": "Education - general",
 			"icon": "glyphicon-book"
 		},
 		{
-			"title": "Economics – Income, property and investment",
+			"title": "Economics - Income, property and investment",
 			"icon": "glyphicon-piggy-bank"
 		},
 		{
-			"title": "Health – General",
+			"title": "Health - General",
 			"icon": "glyphicon-apple"
 		},
 		{
-			"title": "Health – Specific diseases and medical conditions",
+			"title": "Health - Specific diseases and medical conditions",
 			"icon": "glyphicon-asterisk"
 		},
 		{
@@ -722,7 +722,7 @@
 			"icon": "glyphicon-home"
 		},
 		{
-			"title": "Health – Health services and medical",
+			"title": "Health - Health services and medical",
 			"icon": "glyphicon-plus"
 		},
 		{
@@ -730,15 +730,15 @@
 			"icon": "glyphicon-road"
 		},
 		{
-			"title": "Politics – Political behaviour and attitudes",
+			"title": "Politics - Political behaviour and attitudes",
 			"icon": "glyphicon-bullhorn"
 		},
 		{
-			"title": "Society and culture – Social indicators and quality of life",
+			"title": "Society and culture - Social indicators and quality of life",
 			"icon": "glyphicon-music"
 		},
 		{
-			"title": "Employment and labour – General",
+			"title": "Employment and labour - General",
 			"icon": "glyphicon-gbp"
 		}
 	]);
