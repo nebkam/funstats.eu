@@ -8,8 +8,8 @@
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
-			.when('/challenge', {
-				templateUrl: 'views/challenge.html'
+			.when('/game', {
+				templateUrl: 'views/game.html'
 			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'

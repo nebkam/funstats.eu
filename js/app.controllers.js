@@ -72,4 +72,15 @@
 			};
 		}
 	]);
+
+	appControllers.controller('GameController',
+		['$scope','ageGroups','genders','countryList','randomUserService',
+		function($scope,ageGroups,genders,countryList,randomUserService) {
+		$scope.age = _.shuffle(ageGroups)[0];
+		$scope.gender = _.shuffle(genders)[0];
+		$scope.country = _.shuffle(countryList)[0];
+		randomUserService.getUser($scope.gender.readable == 'man' ? 'male' : 'female', function(name,photo) {
+			$scope.name = name;
+		});
+	}]);
 })();

@@ -4,3 +4,6 @@
 .v-offset-1-bottom {
 	margin-bottom: 1em;
 }
+p.character-name:first-letter {
+	text-transform: uppercase;
+}

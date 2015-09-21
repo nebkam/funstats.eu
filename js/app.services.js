@@ -93,6 +93,29 @@
 		};
 	}]);
 
+	appServices.factory('randomUserService', ['$http', function($http) {
+		return {
+			/**
+			 * Generate a random user
+			 * @param gender
+			 * @param cb
+			 */
+			getUser: function(gender,cb) {
+				$http
+					.get('http://api.randomuser.me/', { params: { gender: gender } })
+					.then(function(res) {
+						var name = res.data.results[0].user.name.first;
+						var photo = res.data.results[0].user.picture.thumbnail;
+						if (name && photo) {
+							cb(name,photo);
+						} else {
+							cb(null,null);
+						}
+					});
+			}
+		};
+	}]);
+
 	appServices.factory('questionsService', ['$http','_','surveyQuestions','baseUrl','userKey', function($http,_,surveyQuestions,baseUrl,userKey) {
 		return {
 			pickRandom: function() {
