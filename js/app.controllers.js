@@ -19,7 +19,7 @@
 				$scope.selected = value;
 			};
 			$scope.submit = function() {
-				questionsService.getPercent($scope.apiUrl, function(percent) {
+				questionsService.getPercent($scope.apiUrl,$scope.selected,function(percent) {
 					$scope.percentage = percent;
 				});
 			};

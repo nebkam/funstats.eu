@@ -94,18 +94,19 @@
 			},
 			/**
 			 * @param {String} apiUrl
+			 * @param {Number} selected
 			 * @param {Function} cb
 			 */
-			getPercent: function(apiUrl,cb) {
+			getPercent: function(apiUrl,selected,cb) {
 				var total = 0,
 					myAnswerVal = 0;
 				$http
-					.get(baseUrl + apiUrl + '&user_key=' + userKey)
+					.get(baseUrl + apiUrl + '&user_key=' + userKey, { cache: true })
 					.success(function(res) {
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011) {
 								total = total + value.WeightedFrequency;
-								if (value.Value == $scope.selected) {
+								if (value.Value == selected) {
 									myAnswerVal = value.WeightedFrequency;
 								}
 							}
