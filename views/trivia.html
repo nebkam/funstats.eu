@@ -1,5 +1,8 @@
 <div class="container-fluid" ng-controller="TriviaController">
-	<div class="row">
+	<div class="row text-center" ng-show="isLoading">
+		<div class="timer-loader v-offset-1"></div>
+	</div>
+	<div class="row" ng-hide="isLoading">
 		<div class="col-sm-6 center-block">
 			<img class="img-responsive" ng-src="./img/trivia/{{fact.type}}.jpg" />
 		</div>
@@ -9,7 +12,7 @@
 			<p ng-show="fact.subtitle.length"><small>{{fact.subtitle}}</small></p>
 		</div>
 	</div>
-	<div class="row v-offset-1" ng-show="compareCountries.length">
+	<div class="row v-offset-1" ng-show="compareCountries.length" ng-hide="isLoading">
 		<table class="table table-striped">
 			<tr ng-repeat="country in compareCountries" ng-class="{info: country.name == currentCountry.name, success: country.code == myCountryCode}">
 				<td><img ng-src="/img/flags/{{ country.code }}.png" /></td>
@@ -18,7 +21,7 @@
 			</tr>
 		</table>
 	</div>
-	<div class="row v-offset-1">
+	<div class="row v-offset-1" ng-hide="isLoading">
 		<div class="col-xs-6 text-center">
 			<button type="button" class="btn btn-default btn-block" ng-click="compare();" ng-hide="compareCountries.length">
 				Compare <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
