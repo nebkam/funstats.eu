@@ -1,5 +1,5 @@
 (function() {
-	var appServices = angular.module('app.services',['app.config','underscore']);
+	var appServices = angular.module('app.services',['app.config','underscore','ngStorage']);
 
 	appServices.factory('triviaService',
 		['$http','_','baseUrl','userKey','triviaTypes',
@@ -60,28 +60,34 @@
 		};
 	}]);
 
-	appServices.factory('myCountryService', ['$http', function($http) {
+	appServices.factory('myCountryService', ['$http','$localStorage', function($http,$localStorage) {
 		return {
 			getCode: function(cb) {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(function(position) {
-						$http.get('http://ws.geonames.org/countryCode', { cache: true, params: {
-							lat: position.coords.latitude,
-							lng: position.coords.longitude,
-							type: 'JSON',
-							username: 'nebkam'
-						}}).then(function(res) {
-							if (res.data.countryCode) {
-								cb(res.data.countryCode.toLowerCase());
-							} else {
-								cb(null);
-							}
-						}, function() {
-							cb(null);
-						});
-					});
+				if ($localStorage.myCountryCode) {
+					cb($localStorage.myCountryCode);
 				} else {
-					cb(null);
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(function(position) {
+							$http.get('http://ws.geonames.org/countryCode', { cache: true, params: {
+								lat: position.coords.latitude,
+								lng: position.coords.longitude,
+								type: 'JSON',
+								username: 'nebkam'
+							}}).then(function(res) {
+								if (res.data.countryCode) {
+									var code = res.data.countryCode.toLowerCase();
+									$localStorage.myCountryCode = code;
+									cb(code);
+								} else {
+									cb(null);
+								}
+							}, function() {
+								cb(null);
+							});
+						});
+					} else {
+						cb(null);
+					}
 				}
 			}
 		};
