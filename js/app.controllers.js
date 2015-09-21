@@ -9,6 +9,7 @@
 				$scope.answers = [];
 				$scope.apiUrl = '';
 				$scope.percentage = 0;
+				$scope.selected = 0;
 				$scope.similarAnswer = '';
 				var random = questionsService.pickRandom();
 				$scope.question = random.question;
