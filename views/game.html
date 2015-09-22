@@ -1,21 +1,19 @@
 <div class="container-fluid" ng-controller="GameController">
-	<div class="screen-1">
-		<div class="row text-center">
-			<p>Your character is</p>
-			<p class="lead character-name">{{ name }}</p>
-			<p>{{ age.readable }} {{ gender.readable }} from {{ country.name }}</p>
+	<div class="row text-center">
+		<p>Your character is</p>
+		<p class="lead character-name">{{ character.name }}</p>
+		<p>{{ character.age.readable }} {{ character.gender.readable }} from {{ character.country.name }}</p>
+	</div>
+	<div class="row v-offset-1 v-offset-1-bottom">
+		<div class="col-xs-6 text-center">
+			<button type="button" class="btn btn-default btn-block" ng-click="newCharacter();">
+				New Character
+			</button>
 		</div>
-		<div class="row v-offset-1 v-offset-1-bottom">
-			<div class="col-xs-6 text-center">
-				<button type="button" class="btn btn-default btn-block">
-					New Character
-				</button>
-			</div>
-			<div class="col-xs-6 text-center">
-				<button type="button" class="btn btn-primary btn-block">
-					Continue
-				</button>
-			</div>
+		<div class="col-xs-6 text-center">
+			<button type="button" class="btn btn-primary btn-block" disabled>
+				Continue
+			</button>
 		</div>
 	</div>
 </div>

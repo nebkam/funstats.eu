@@ -93,23 +93,30 @@
 		};
 	}]);
 
-	appServices.factory('randomUserService', ['$http', function($http) {
+	appServices.factory('characterService',
+		['$http','_','ageGroups','genders','countryList',
+		function($http,_,ageGroups,genders,countryList) {
 		return {
 			/**
 			 * Generate a random user
-			 * @param gender
-			 * @param cb
+			 * @param {Function} cb Receives character object or null on fail
 			 */
-			getUser: function(gender,cb) {
+			generate: function(cb) {
+				var character = {
+					age: _.shuffle(ageGroups)[0],
+					gender: _.shuffle(genders)[0],
+					country: _.shuffle(countryList)[0]
+				};
+				var gender_option = (character.gender.readable == 'man') ? 'male' : 'female';
 				$http
-					.get('http://api.randomuser.me/', { params: { gender: gender } })
+					.get('http://api.randomuser.me/', { params: { gender: gender_option } })
 					.then(function(res) {
 						var name = res.data.results[0].user.name.first;
-						var photo = res.data.results[0].user.picture.thumbnail;
-						if (name && photo) {
-							cb(name,photo);
+						if (name) {
+							character.name = name;
+							cb(character);
 						} else {
-							cb(null,null);
+							cb(null);
 						}
 					});
 			}
