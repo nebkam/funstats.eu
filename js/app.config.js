@@ -978,31 +978,38 @@
 	}]);
 
 	appConfig.constant('ageGroups', [{
+		code: "20",
 		readable: "20-something",
 		range: "18-24",
 		filter: "12:1"
 	}, {
+		code: "30",
 		readable: "30-something",
 		range: "25-34",
 		filter: "12:2"
 	}, {
+		code: "40",
 		readable: "40-something",
 		range: "35-49",
 		filter: "12:3"
 	}, {
+		code: "50",
 		readable: "50-something",
 		range: "50-64",
 		filter: "12:4"
 	}, {
+		code: "60",
 		readable: "60-something",
 		range: "65+",
 		filter: "12:5"
 	}]);
 
 	appConfig.constant('genders', [{
+		code: 'm',
 		readable: "man",
 		filter: "13:1"
 	}, {
+		code: 'f',
 		readable: "woman",
 		filter: "13:2"
 	}]);

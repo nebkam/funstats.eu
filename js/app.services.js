@@ -107,7 +107,7 @@
 					gender: _.shuffle(genders)[0],
 					country: _.shuffle(countryList)[0]
 				};
-				var gender_option = (character.gender.readable == 'man') ? 'male' : 'female';
+				var gender_option = (character.gender.code == 'm') ? 'male' : 'female';
 				$http
 					.get('http://api.randomuser.me/', { params: { gender: gender_option } })
 					.then(function(res) {

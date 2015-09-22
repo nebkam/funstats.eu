@@ -1,7 +1,7 @@
 <div class="container-fluid" ng-controller="GameController">
 	<div class="row text-center">
-		<p>Your character is</p>
-		<p class="lead character-name">{{ character.name }}</p>
+		<p>Your character is&hellip;	</p>
+		<p class="lead character-name {{ character.gender.code }}-{{ character.age.code }}">{{ character.name }}</p>
 		<p>{{ character.age.readable }} {{ character.gender.readable }} from {{ character.country.name }}</p>
 	</div>
 	<div class="row v-offset-1 v-offset-1-bottom">
