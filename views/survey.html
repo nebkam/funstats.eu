@@ -6,11 +6,11 @@
 		<h1 class="text-center">
 			<span class="glyphicon {{icon}}"></span>
 		</h1>
-		<p class="lead text-center">
+		<p class="lead text-center h-spacing-5">
 			{{question}}
 		</p>
 		<form>
-			<div class="radio" ng-repeat="answer in answers">
+			<div class="radio h-spacing-5" ng-repeat="answer in answers">
 				<label>
 					<input type="radio" name="optionsRadios" id="optionsRadios1" value="{{answer.value}}" ng-click="setSelected(answer.value);">
 					{{answer.text}}
@@ -26,15 +26,13 @@
 			<button type="button" class="btn btn-primary btn-block" ng-disabled="!selected" ng-click="submit();">Submit</button>
 		</div>
 	</div>
-	<div class="row text-center v-offset-1 v-offset-1-bottom" ng-show="percentage[0]">
+	<div class="row text-center v-offset-1 v-offset-1-bottom h-spacing-5" ng-show="percentage[0]">
 		<h4>You are in</h4>
 		<h2>{{ percentage[0] }}%</h2> 
-		<h5> of people in EU that answered &quot;{{ similarAnswer }}&quot; <span ng-show="percentage[1]">in 2011</span></h5>
+		<h5> of people in EU that answered &quot;{{ similarAnswer }}&quot; in 2011</h5>
 	</div>
-	<div class="row text-center" ng-show="percentage[1]">
-		<h4>Compared to</h4>
-		<h2>{{ percentage[1] }}%</h2> 
-		<h5>in 2007</h5>
+	<div class="row text-center h-spacing-5" ng-show="percentage[1]">
+		<p>Compared to <span class="lead">{{ percentage[1] }}%</span> in 2007</p>
 	</div>	
 	<div class="row text-center v-offset-1-bottom" ng-show="percentage">
 		<div class="col-xs-6 col-xs-offset-6 text-center v-offset-1">
