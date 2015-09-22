@@ -7,3 +7,7 @@
 p.character-name:first-letter {
 	text-transform: uppercase;
 }
+
+.radio {
+	margin-left: 10%;
+}
