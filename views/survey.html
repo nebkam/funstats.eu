@@ -29,10 +29,12 @@
 	<div class="row text-center v-offset-1 v-offset-1-bottom" ng-show="percentage[0]">
 		<h4>You are in</h4>
 		<h2>{{ percentage[0] }}%</h2> 
-		<h5> of people in EU that answered &quot;{{ similarAnswer }}&quot; in 2011</h5>
+		<h5> of people in EU that answered &quot;{{ similarAnswer }}&quot; <span ng-show="percentage[1]">in 2011</span></h5>
 	</div>
 	<div class="row text-center" ng-show="percentage[1]">
-		<p>Compared to <span class="lead">{{ percentage[1] }}%</span> in 2007</p>
+		<h4>Compared to</h4>
+		<h2>{{ percentage[1] }}%</h2> 
+		<h5>in 2007</h5>
 	</div>	
 	<div class="row text-center v-offset-1-bottom" ng-show="percentage">
 		<div class="col-xs-6 col-xs-offset-6 text-center v-offset-1">
