@@ -135,7 +135,9 @@
 			 */
 			getPercent: function(apiUrl,selected,cb) {
 				var total = 0,
-					myAnswerVal = 0;
+					total2 = 0,
+					myAnswerVal = 0,
+					myAnswerVal2 = 0;
 				$http
 					.get(baseUrl + apiUrl + '&user_key=' + userKey, { cache: true })
 					.success(function(res) {
@@ -144,10 +146,16 @@
 								total = total + value.WeightedFrequency;
 								if (value.Value == selected) {
 									myAnswerVal = value.WeightedFrequency;
-								}
+								}									
+							}
+							if (value.Year == 2007) {
+								total2 = total2 + value.WeightedFrequency;
+								if (value.Value == selected) {
+									myAnswerVal2 = value.WeightedFrequency
+								}	
 							}
 						});
-						cb( Math.round((myAnswerVal/total) * 100) );
+						cb( Math.round((myAnswerVal/total) * 100), Math.round((myAnswerVal2/total2) * 100) );
 					});
 			}
 		};

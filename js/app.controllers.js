@@ -26,8 +26,8 @@
 				$scope.isLoading = true;
 				var selectedOption = _.where($scope.answers,{ value: $scope.selected });
 				$scope.similarAnswer = selectedOption[0].text;
-				questionsService.getPercent($scope.apiUrl,$scope.selected,function(percent) {
-					$scope.percentage = percent;
+				questionsService.getPercent($scope.apiUrl,$scope.selected,function(percent, percent2) {
+					$scope.percentage = [percent, percent2];
 					$scope.isLoading = false;
 				});
 			};
