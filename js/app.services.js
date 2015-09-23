@@ -108,6 +108,11 @@
 						gender: _.shuffle(genders)[0],
 						country: _.shuffle(countryList)[0]
 					};
+
+				//Decorate to avoid repetitive calculations in the view
+				character.country.code = character.country.code.toLowerCase();
+				character.avatar = character.age.code + character.gender.code;
+
 				$http
 					.get('http://www.behindthename.com/api/random.php', { params: {
 						key: btnApiKey,

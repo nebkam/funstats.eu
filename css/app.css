@@ -13,3 +13,17 @@
 	width: 40px;
 	margin-top: -7px;
 }
+.avatar-title {
+	position: relative;
+	padding-left: 21px;
+}
+.avatar-xs {
+	position: absolute;
+	top: -8px;
+	left: -11px;
+	height: 30px;
+	width: 30px;
+}
+.flag {
+	margin-bottom: 2px;
+}
