@@ -699,6 +699,91 @@
 		}],
 		type: 'TimeseriesFrequency',
 		variableId: 6
+	},{
+		question: 'Last time you visited doctor was it difficult because of cost?',
+		answers: [{
+			value: 1,
+			text: 'Very difficult'
+		}, {
+			value: 2,
+			text: 'A little difficult'
+		}, {
+			value: 3,
+			text: 'Not difficult at all'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 58
+	},{
+		question: 'How frequently participate in social activities?',
+		answers: [{
+			value: 1,
+			text: 'Every day or almost every day'
+		}, {
+			value: 2,
+			text: 'At least once a week'
+		}, {
+			value: 3,
+			text: 'One to three times a month'
+		},{
+			value: 4,
+			text: 'Less often'
+		},{
+			value: 5,
+			text: 'Never'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 108
+	},{
+		question: 'What is your education?',
+		answers: [{
+			value: 1,
+			text: 'Primary or less'
+		}, {
+			value: 2,
+			text: 'Secondary'
+		}, {
+			value: 3,
+			text: 'Tertiary'
+		},{
+			value: 4,
+			text: '(Completed education abroad)'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 17	
+	},{
+		question: 'How would you describe your access to public transport facilities (bus, metro, tram, etc.)?',
+		answers: [{
+			value: 1,
+			text: 'With great difficulty'
+		}, {
+			value: 2,
+			text: 'With some difficulty'
+		}, {
+			value: 3,
+			text: 'Easily'
+		},{
+			value: 4,
+			text: 'Very easily'
+		},{
+			value: 5,
+			text: 'Service not used'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 62	
+	},{
+		question: 'How much tension between Old and Young people?',
+		answers: [{
+			value: 1,
+			text: 'A lot of tension'
+		}, {
+			value: 2,
+			text: 'Some tension'
+		}, {
+			value: 3,
+			text: 'No tension'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 95	
 	}]);
 
 	appConfig.constant('surveyTopics', [
