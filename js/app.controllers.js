@@ -79,6 +79,7 @@
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
+
 		$scope.question = _.shuffle(gameQuestions)[0];
 
 		gameService.generateCharacter(function(character) {
@@ -87,8 +88,11 @@
 			$scope.character = character;
 		});
 
-		$scope.submit = function() {
-			$scope.isSubmitted = true;
+		$scope.setSelected = function(value) {
+			$scope.selectedAnswer = value;
+		};
+		$scope.submitAnswer = function() {
+			$scope.isLoading = true;
 		};
 	}]);
 })();

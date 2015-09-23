@@ -48,11 +48,22 @@
 				<p class="lead text-center h-spacing-5">
 					{{ question.question }}
 				</p>
-				<div class="list-group">
-					<button type="button" class="list-group-item" ng-repeat="answer in question.answers" ng-disabled="isSubmitted" ng-click="submit();">
+				<div class="radio h-spacing-5" ng-repeat="answer in question.answers" ng-hide="showCorrectAnswer">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios" value="{{ answer.value }}" ng-click="setSelected(answer.value);">
 						{{ answer.text }}
-					</button>
+					</label>
 				</div>
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="answer in question.answers" ng-show="showCorrectAnswer">
+						{{ answer.text }}
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row v-offset-1-bottom">
+			<div class="col-xs-6 col-xs-offset-6 text-center">
+				<a class="btn btn-block btn-primary" ng-disabled="!selectedAnswer" ng-click="selectedAnswer && submitAnswer();">Answer <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>
