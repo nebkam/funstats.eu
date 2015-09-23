@@ -74,8 +74,8 @@
 	]);
 
 	appControllers.controller('GamePlayController',
-		['$scope','characterService','gameQuestions',
-			function($scope,characterService,gameQuestions) {
+		['$scope','characterService','gameQuestions','gameQuestionsService',
+			function($scope,characterService,gameQuestions,gameQuestionsService) {
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
@@ -86,5 +86,9 @@
 			$scope.scene = 'character';
 			$scope.character = character;
 		});
+
+		$scope.submit = function(answerValue) {
+			gameQuestionsService.getCorrectAnswer($scope.question,$scope.character.filter,function() {});
+		};
 	}]);
 })();

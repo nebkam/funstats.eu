@@ -109,9 +109,10 @@
 						country: _.shuffle(countryList)[0]
 					};
 
-				//Decorate to avoid repetitive calculations in the view
+				//Decorate to avoid repetitive calculations
 				character.country.code = character.country.code.toLowerCase();
 				character.avatar = character.age.code + character.gender.code;
+				character.filter = [character.age.filter,character.gender.filter,character.country.filter].join('|');
 
 				$http
 					.get('http://www.behindthename.com/api/random.php', { params: {
@@ -150,6 +151,30 @@
 				} else {
 					throw new Error("No XML parser found");
 				}
+			}
+		};
+	}]);
+
+	appServices.factory('gameQuestionsService',
+		['$http','baseUrl','userKey',
+			function($http,baseUrl,userKey) {
+		return {
+			/**
+			 *
+			 * @param {Object} question
+			 * @param {String} characterFilter
+			 * @param {Function} cb
+			 */
+			getCorrectAnswer: function(question,characterFilter,cb) {
+				$http
+					.get(baseUrl+'/'+question.type, { params: {
+						variableId: question.variableId,
+						filter: characterFilter,
+						user_key: userKey
+					}})
+					.then(function(res) {
+						console.log(res);
+					});
 			}
 		};
 	}]);
