@@ -74,6 +74,6 @@
 	]);
 
 	appControllers.controller('GamePlayController', ['$scope',function($scope) {
-
+		$scope.scene = 'character';
 	}]);
 })();

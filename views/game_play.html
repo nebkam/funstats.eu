@@ -1,18 +1,32 @@
-<div class="container-fluid">
-	<div class="panel panel-default v-offset-1">
-		<div class="panel-heading">
-			<h3 class="panel-title">Character</h3>
-		</div>
-		<div class="panel-body text-center">
-			<p>Your character is</p>
-			<h2>John</h2>
-			<p>a 20-something yr old man</p>
-			<p>from Sweden</p>
-		</div>
-	</div>
-	<div class="row v-offset-1-bottom">
-		<div class="col-xs-6 col-xs-offset-6 text-center">
-			<a class="btn btn-block btn-primary">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+<div class="container-fluid" ng-controller="GamePlayController">
+	<div class="scene" ng-show="isLoading">
+		<div class="panel panel-default v-offset-1">
+			<div class="panel-heading">
+				<h3 class="panel-title">John</h3>
+			</div>
+			<div class="row text-center">
+				<div class="timer-loader v-offset-1 v-offset-1-bottom"></div>
+			</div>
 		</div>
 	</div>
+
+	<div class="scene" ng-show="scene == 'character' && !isLoading">
+		<div class="panel panel-default v-offset-1">
+			<div class="panel-heading">
+				<h3 class="panel-title">Character</h3>
+			</div>
+			<div class="panel-body text-center">
+				<p>Your character is</p>
+				<h2>John</h2>
+				<p>a 20-something yr old man</p>
+				<p>from Sweden</p>
+			</div>
+		</div>
+		<div class="row v-offset-1-bottom">
+			<div class="col-xs-6 col-xs-offset-6 text-center">
+				<a class="btn btn-block btn-primary" ng-click="isLoading=true">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+			</div>
+		</div>
+	</div>
+
 </div>
