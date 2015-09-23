@@ -682,6 +682,23 @@
 		}
 	]);
 
+	appConfig.constant('gameQuestions', [{
+		question: 'The area in which you live is...?',
+		answers: [{
+			value: 1,
+			text: 'The open countryside'
+		}, {
+			value: 2,
+			text: 'A village/small town'
+		}, {
+			value: 3,
+			text: 'A medium to large town'
+		}, {
+			value: 4,
+			text: 'A city or city suburb'
+		}]
+	}]);
+
 	appConfig.constant('surveyTopics', [
 		{
 			"title": "Social stratification and groupings - Family life and marriage",

@@ -45,7 +45,12 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-
+				<p class="lead text-center h-spacing-5">
+					{{ question.question }}
+				</p>
+				<div class="list-group">
+					<button type="button" class="list-group-item" ng-repeat="answer in question.answers">{{ answer.text }} </button>
+				</div>
 			</div>
 		</div>
 	</div>

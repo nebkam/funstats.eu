@@ -73,10 +73,13 @@
 		}
 	]);
 
-	appControllers.controller('GamePlayController', ['$scope','characterService',function($scope,characterService) {
+	appControllers.controller('GamePlayController',
+		['$scope','characterService','gameQuestions',
+			function($scope,characterService,gameQuestions) {
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
+		$scope.question = gameQuestions[0];
 
 		characterService.generate(function(character) {
 			$scope.isLoading = false;
