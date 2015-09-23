@@ -810,7 +810,7 @@
 		type: 'TimeseriesFrequency',
 		variableId: 129
 	}, {
-		question: 'When looking for a job, from whom you\'d expect support ?',
+		question: 'When looking for a job, from whom you\'d expect support?',
 		answers: [{
 			value: 1,
 			text: 'A member of my family, a relative'
@@ -826,6 +826,43 @@
 		}],
 		type: 'TimeseriesFrequency',
 		variableId: 33
+	}, {
+		question: 'How often do you have direct, face-to-face contact with a brother, sister or other relative (living outside your household)?',
+		answers: [{
+			value: 1,
+			text: 'Every day or almost every day'
+		}, {
+			value: 2,
+			text: 'At least once a week'
+		}, {
+			value: 3,
+			text: 'One to three times a month'
+		}, {
+			value: 4,
+			text: 'Less often'
+		}, {
+			value: 5,
+			text: 'Never'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 25
+	}, {
+		question: 'Do your working hours fit in with your family or social commitments outside work?',
+		answers: [{
+			value: 1,
+			text: 'Very well'
+		}, {
+			value: 2,
+			text: 'Fairly well'
+		}, {
+			value: 3,
+			text: 'Not very well'
+		}, {
+			value: 4,
+			text: 'Not at all well'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 170
 	}]);
 
 	appConfig.constant('surveyTopics', [
