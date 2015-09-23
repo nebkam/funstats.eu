@@ -155,30 +155,6 @@
 		};
 	}]);
 
-	appServices.factory('gameQuestionsService',
-		['$http','baseUrl','userKey',
-			function($http,baseUrl,userKey) {
-		return {
-			/**
-			 *
-			 * @param {Object} question
-			 * @param {String} characterFilter
-			 * @param {Function} cb
-			 */
-			getCorrectAnswer: function(question,characterFilter,cb) {
-				$http
-					.get(baseUrl+'/'+question.type, { params: {
-						variableId: question.variableId,
-						filter: characterFilter,
-						user_key: userKey
-					}})
-					.then(function(res) {
-						console.log(res);
-					});
-			}
-		};
-	}]);
-
 	appServices.factory('questionsService', ['$http','_','surveyQuestions','baseUrl','userKey', function($http,_,surveyQuestions,baseUrl,userKey) {
 		return {
 			pickRandom: function() {

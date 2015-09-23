@@ -86,9 +86,5 @@
 			$scope.scene = 'character';
 			$scope.character = character;
 		});
-
-		$scope.submit = function(answerValue) {
-			gameQuestionsService.getCorrectAnswer($scope.question,$scope.character.filter,function() {});
-		};
 	}]);
 })();

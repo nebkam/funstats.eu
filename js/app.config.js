@@ -700,7 +700,7 @@
 		type: 'TimeseriesFrequency',
 		variableId: 6
 	},{
-		question: 'Last time you visited doctor was it difficult because of cost?',
+		question: 'The last time you visited doctor, was it difficult because of the cost?',
 		answers: [{
 			value: 1,
 			text: 'Very difficult'
@@ -714,7 +714,7 @@
 		type: 'TimeseriesFrequency',
 		variableId: 58
 	},{
-		question: 'How frequently participate in social activities?',
+		question: 'How frequently do you participate in social activities?',
 		answers: [{
 			value: 1,
 			text: 'Every day or almost every day'
@@ -746,12 +746,12 @@
 			text: 'Tertiary'
 		},{
 			value: 4,
-			text: '(Completed education abroad)'
+			text: 'I\'ve completed education abroad'
 		}],
 		type: 'TimeseriesFrequency',
 		variableId: 17	
 	},{
-		question: 'How would you describe your access to public transport facilities (bus, metro, tram, etc.)?',
+		question: 'Describe your access to public transport (bus, metro, tram..)',
 		answers: [{
 			value: 1,
 			text: 'With great difficulty'
@@ -771,7 +771,7 @@
 		type: 'TimeseriesFrequency',
 		variableId: 62	
 	},{
-		question: 'How much tension between Old and Young people?',
+		question: 'What do you think, is there tension between the old and the young people?',
 		answers: [{
 			value: 1,
 			text: 'A lot of tension'
