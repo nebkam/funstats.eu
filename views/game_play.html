@@ -49,7 +49,7 @@
 					{{ question.question }}
 				</p>
 				<div class="list-group">
-					<button type="button" class="list-group-item" ng-repeat="answer in question.answers">
+					<button type="button" class="list-group-item" ng-repeat="answer in question.answers" ng-disabled="isSubmitted" ng-click="submit();">
 						{{ answer.text }}
 					</button>
 				</div>

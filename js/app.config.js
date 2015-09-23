@@ -785,7 +785,7 @@
 		type: 'TimeseriesFrequency',
 		variableId: 95	
 	}, {
-		question: 'Do you think that the share of housework you do is&hellip;',
+		question: 'Do you think that the share of housework you do is..',
 		answers: [{
 			value: 1,
 			text: 'More than your fair share'

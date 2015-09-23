@@ -27,3 +27,6 @@
 .flag {
 	margin-bottom: 2px;
 }
+button.list-group-item[disabled]:hover {
+	background-color: #fff;
+}

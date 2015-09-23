@@ -86,5 +86,9 @@
 			$scope.scene = 'character';
 			$scope.character = character;
 		});
+
+		$scope.submit = function() {
+			$scope.isSubmitted = true;
+		};
 	}]);
 })();
