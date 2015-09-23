@@ -72,4 +72,8 @@
 			};
 		}
 	]);
+
+	appControllers.controller('GamePlayController', ['$scope',function($scope) {
+
+	}]);
 })();
