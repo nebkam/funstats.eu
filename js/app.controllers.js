@@ -74,14 +74,14 @@
 	]);
 
 	appControllers.controller('GamePlayController',
-		['$scope','characterService','gameQuestions',
-			function($scope,characterService,gameQuestions) {
+		['$scope','_','gameQuestions','gameService',
+			function($scope,_,gameQuestions,gameService) {
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
-		$scope.question = gameQuestions[0];
+		$scope.question = _.shuffle(gameQuestions)[0];
 
-		characterService.generate(function(character) {
+		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
 			$scope.scene = 'character';
 			$scope.character = character;

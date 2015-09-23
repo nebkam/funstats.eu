@@ -93,7 +93,7 @@
 		};
 	}]);
 
-	appServices.factory('characterService',
+	appServices.factory('gameService',
 		['$http','$window','_','ageGroups','genders','countryList','btnApiKey',
 		function($http,$window,_,ageGroups,genders,countryList,btnApiKey) {
 		return {
@@ -101,7 +101,7 @@
 			 * Generate a random user
 			 * @param {Function} cb Receives character object or null on fail
 			 */
-			generate: function(cb) {
+			generateCharacter: function(cb) {
 				var self = this,
 					character = {
 						age: _.shuffle(ageGroups)[0],
