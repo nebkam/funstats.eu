@@ -120,7 +120,7 @@
 						try {
 							character.name = xml.childNodes[0].childNodes[1].childNodes[1].innerHTML;
 						} catch (e) {
-							character.name = 'Branko';
+							character.name = character.gender.code == 'f' ? 'Jane' : 'Joe';
 						}
 						cb(character);
 					});
