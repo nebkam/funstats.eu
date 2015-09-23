@@ -4,44 +4,6 @@
 .v-offset-1-bottom {
 	margin-bottom: 1em;
 }
-p.character-name:first-letter {
-	text-transform: uppercase;
-}
-p.character-name {
-	display: inline-block;
-	padding: 10px 0 10px 48px;
-}
-.m-20 {
-	background: url('../img/avatars/20m.png') no-repeat center left;
-}
-.m-30 {
-	background: url('../img/avatars/30m.png') no-repeat center left;
-}
-.m-40 {
-	background: url('../img/avatars/40m.png') no-repeat center left;
-}
-.m-50 {
-	background: url('../img/avatars/50m.png') no-repeat center left;
-}
-.m-60 {
-	background: url('../img/avatars/60m.png') no-repeat center left;
-}
-.f-20 {
-	background: url('../img/avatars/20f.png') no-repeat center left;
-}
-.f-30 {
-	background: url('../img/avatars/30f.png') no-repeat center left;
-}
-.f-40 {
-	background: url('../img/avatars/40f.png') no-repeat center left;
-}
-.f-50 {
-	background: url('../img/avatars/50f.png') no-repeat center left;
-}
-.f-60 {
-	background: url('../img/avatars/60f.png') no-repeat center left;
-}
-
 .h-spacing-5 {
 	margin-left: 5%;
 	margin-right: 5%;

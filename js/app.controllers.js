@@ -76,11 +76,6 @@
 	appControllers.controller('GameController',
 		['$scope','characterService',
 		function($scope,characterService) {
-			$scope.newCharacter = function() {
-				characterService.generate(function(character) {
-					$scope.character = character;
-				});
-			};
-			$scope.newCharacter();
+
 	}]);
 })();
