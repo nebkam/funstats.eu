@@ -5,6 +5,8 @@
 
 	appConfig.constant('userKey', '32c520dabe65f1a197868d539b89048b');
 
+	appConfig.constant('btnApiKey', 'ne684508');
+
 	appConfig.constant('surveyQuestions', [
 		{
 			"id" : 1,
@@ -838,142 +840,177 @@
 	appConfig.constant('countryList', [{
 		"name": "Austria",
 		"code": "AT",
+		"btn": "ger",
 		"filter": "2:1"
 	}, {
 		"name": "Belgium",
 		"code": "BE",
+		"btn": "fle",
 		"filter": "2:2"
 	}, {
 		"name": "Bulgaria",
 		"code": "BG",
+		"btn": "bul",
 		"filter": "2:3"
 	}, {
 		"name": "Cyprus",
 		"code": "CY",
+		"btn": "gre",
 		"filter": "2:4"
 	}, {
 		"name": "Czech Republic",
 		"code": "CZ",
+		"btn": "cze",
 		"filter": "2:5"
 	}, {
 		"name": "Germany",
 		"code": "DE",
+		"btn": "ger",
 		"filter": "2:6"
 	}, {
 		"name": "Denmark",
 		"code": "DK",
+		"btn": "dan",
 		"filter": "2:7"
 	}, {
 		"name": "Estonia",
 		"code": "EE",
+		"btn": "est",
 		"filter": "2:8"
 	}, {
 		"name": "Greece",
 		"code": "GR",
+		"btn": "gre",
 		"filter": "2:9"
 	}, {
 		"name": "Spain",
 		"code": "ES",
+		"btn": "spa",
 		"filter": "2:10"
 	}, {
 		"name": "Finland",
 		"code": "FI",
+		"btn": "fin",
 		"filter": "2:11"
 	}, {
 		"name": "France",
 		"code": "FR",
+		"btn": "fre",
 		"filter": "2:12"
 	}, {
 		"name": "Hungary",
 		"code": "HU",
+		"btn": "hun",
 		"filter": "2:13"
 	}, {
 		"name": "Ireland",
 		"code": "IE",
+		"btn": "iri",
 		"filter": "2:14"
 	}, {
 		"name": "Italy",
 		"code": "IT",
+		"btn": "ita",
 		"filter": "2:15"
 	}, {
 		"name": "Lithuania",
 		"code": "LT",
+		"btn": "lth",
 		"filter": "2:16"
 	}, {
 		"name": "Luxembourg",
 		"code": "LU",
+		"btn": "fre",
 		"filter": "2:17"
 	}, {
 		"name": "Latvia",
 		"code": "LV",
+		"btn": "lat",
 		"filter": "2:18"
 	}, {
 		"name": "Malta",
 		"code": "MT",
+		"btn": "mal",
 		"filter": "2:19"
 	}, {
 		"name": "Netherlands",
 		"code": "NL",
+		"btn": "dut",
 		"filter": "2:20"
 	}, {
 		"name": "Poland",
 		"code": "PL",
+		"btn": "pol",
 		"filter": "2:21"
 	}, {
 		"name": "Portugal",
 		"code": "PT",
+		"btn": "por",
 		"filter": "2:22"
 	}, {
 		"name": "Romania",
 		"code": "RO",
+		"btn": "rmn",
 		"filter": "2:23"
 	}, {
 		"name": "Sweden",
 		"code": "SE",
+		"btn": "swe",
 		"filter": "2:24"
 	}, {
 		"name": "Slovenia",
 		"code": "SI",
+		"btn": "sln",
 		"filter": "2:25"
 	}, {
 		"name": "Slovakia",
 		"code": "SK",
+		"btn": "slk",
 		"filter": "2:26"
 	}, {
 		"name": "UK",
 		"code": "GB",
+		"btn": "eng",
 		"filter": "2:27"
 	}, {
 		"name": "Turkey",
 		"code": "TR",
+		"btn": "tur",
 		"filter": "2:28"
 	}, {
 		"name": "Croatia",
 		"code": "HR",
+		"btn": "cro",
 		"filter": "2:29"
 	}, {
 		"name": "Macedonia (FYROM)",
 		"code": "MK",
+		"btn": "mac",
 		"filter": "2:30"
 	}, {
 		"name": "Serbia",
 		"code": "RS",
+		"btn": "ser",
 		"filter": "2:32"
 	}, {
 		"name": "Kosovo",
 		"code": "RS",
+		"btn": "ser",
 		"filter": "2:31"
 	}, {
 		"name": "Montenegro",
 		"code": "ME",
+		"btn": "ser",
 		"filter": "2:33"
 	}, {
 		"name": "Iceland",
 		"code": "IS",
+		"btn": "ice",
 		"filter": "2:34"
 	}, {
 		"name": "Norway",
 		"code": "NO",
+		"btn": "nor",
 		"filter": "2:35"
 	}]);
 

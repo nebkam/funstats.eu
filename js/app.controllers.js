@@ -73,7 +73,10 @@
 		}
 	]);
 
-	appControllers.controller('GamePlayController', ['$scope',function($scope) {
+	appControllers.controller('GamePlayController', ['$scope','characterService',function($scope,characterService) {
 		$scope.scene = 'character';
+		characterService.generate(function(res) {
+			console.log(res);
+		});
 	}]);
 })();

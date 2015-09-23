@@ -94,8 +94,8 @@
 	}]);
 
 	appServices.factory('characterService',
-		['$http','_','ageGroups','genders','countryList',
-		function($http,_,ageGroups,genders,countryList) {
+		['$http','_','ageGroups','genders','countryList','btnApiKey',
+		function($http,_,ageGroups,genders,countryList,btnApiKey) {
 		return {
 			/**
 			 * Generate a random user
@@ -107,18 +107,14 @@
 					gender: _.shuffle(genders)[0],
 					country: _.shuffle(countryList)[0]
 				};
-				var gender_option = (character.gender.code == 'm') ? 'male' : 'female';
-				$http
-					.get('http://api.randomuser.me/', { params: { gender: gender_option } })
-					.then(function(res) {
-						var name = res.data.results[0].user.name.first;
-						if (name) {
-							character.name = name;
-							cb(character);
-						} else {
-							cb(null);
-						}
-					});
+			$http
+				.get('http://www.behindthename.com/api/random.php', { params: {
+					key: btnApiKey,
+					gender: 'm',
+					usage: 'ser',
+					number: 1
+				} })
+				.then(cb);
 			}
 		};
 	}]);
