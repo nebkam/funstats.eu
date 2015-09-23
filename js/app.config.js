@@ -696,7 +696,9 @@
 		}, {
 			value: 4,
 			text: 'A city or city suburb'
-		}]
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 6
 	}]);
 
 	appConfig.constant('surveyTopics', [
