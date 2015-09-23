@@ -17,9 +17,11 @@
 			</div>
 			<div class="panel-body text-center">
 				<p>Your character is&hellip;</p>
-				<h2>{{ character.name }}</h2>
+				<h2>
+					<img class="avatar-lg" ng-src="../img/avatars/{{ character.age.code }}{{ character.gender.code }}.svg"/>{{ character.name }}
+				</h2>
 				<p>a {{ character.age.readable }} yr old {{ character.gender.readable }}</p>
-				<p>from {{ character.country.name }}</p>
+				<p>from <img ng-src="../img/flags/{{ character.country.code.toLowerCase() }}.png"/> {{ character.country.name }}</p>
 			</div>
 		</div>
 		<div class="row v-offset-1-bottom">

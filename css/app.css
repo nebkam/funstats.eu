@@ -8,3 +8,8 @@
 	margin-left: 5%;
 	margin-right: 5%;
 }
+.avatar-lg {
+	height: 40px;
+	width: 40px;
+	margin-top: -7px;
+}
