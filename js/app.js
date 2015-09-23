@@ -8,14 +8,17 @@
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
-			.when('/game', {
-				templateUrl: 'views/game.html'
-			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'
 			})
 			.when('/survey', {
 				templateUrl: 'views/survey.html'
+			})
+			.when('/game/intro', {
+				templateUrl: 'views/game_intro.html'
+			})
+			.when('/game/play', {
+				templateUrl: 'views/game_play.html'
 			})
 			.otherwise({
 				templateUrl: 'views/home.html'

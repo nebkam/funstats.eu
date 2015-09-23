@@ -72,10 +72,4 @@
 			};
 		}
 	]);
-
-	appControllers.controller('GameController',
-		['$scope','characterService',
-		function($scope,characterService) {
-
-	}]);
 })();
