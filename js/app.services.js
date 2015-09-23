@@ -94,8 +94,8 @@
 	}]);
 
 	appServices.factory('gameService',
-		['$http','$window','_','ageGroups','genders','countryList','btnApiKey',
-		function($http,$window,_,ageGroups,genders,countryList,btnApiKey) {
+		['$http','$window','_','ageGroups','genders','countryList','baseUrl','userKey','btnApiKey',
+		function($http,$window,_,ageGroups,genders,countryList,baseUrl,userKey,btnApiKey) {
 		return {
 			/**
 			 * Generate a random user
@@ -151,6 +151,23 @@
 				} else {
 					throw new Error("No XML parser found");
 				}
+			},
+			/**
+			 * @param {Object} question
+			 * @param {String} filter
+			 * @param {Function} cb
+			 */
+			getCorrectAnswer: function(question,characterFilter,cb) {
+				$http
+					.get(baseUrl+'/'+question.type, { params: {
+						variableId: question.variableId,
+						filter: characterFilter,
+						user_key: userKey
+					} })
+					.then(function(res) {
+						console.log(res);
+						cb();
+					});
 			}
 		};
 	}]);

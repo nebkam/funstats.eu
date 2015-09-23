@@ -88,11 +88,16 @@
 			$scope.character = character;
 		});
 
+		$scope.correctAnswer = null;//TODO init on every question
 		$scope.setSelected = function(value) {
 			$scope.selectedAnswer = value;
 		};
 		$scope.submitAnswer = function() {
 			$scope.isLoading = true;
+			gameService.getCorrectAnswer($scope.question,$scope.character.filter,function() {
+				$scope.isLoading = false;
+				$scope.correctAnswer = 3;//TODO
+			});
 		};
 	}]);
 })();
