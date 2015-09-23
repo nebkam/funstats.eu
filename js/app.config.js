@@ -766,7 +766,7 @@
 			text: 'Very easily'
 		},{
 			value: 5,
-			text: 'Service not used'
+			text: 'I don\'t use it'
 		}],
 		type: 'TimeseriesFrequency',
 		variableId: 62	
@@ -784,6 +784,48 @@
 		}],
 		type: 'TimeseriesFrequency',
 		variableId: 95	
+	}, {
+		question: 'Do you think that the share of housework you do is&hellip;',
+		answers: [{
+			value: 1,
+			text: 'More than your fair share'
+		}, {
+			value: 2,
+			text: 'Just about your fair share'
+		}, {
+			value: 3,
+			text: 'Less than your fair share'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 179
+	}, {
+		question: 'Can you afford to replace any worn-out furniture?',
+		answers: [{
+			value: 1,
+			text: 'Yes, I can afford it, if I want'
+		}, {
+			value: 2,
+			text: 'No, I can\'t afford it'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 129
+	}, {
+		question: 'When looking for a job, from whom you\'d expect support ?',
+		answers: [{
+			value: 1,
+			text: 'A member of my family, a relative'
+		}, {
+			value: 2,
+			text: 'A friend, neighbour, or somebody else I know'
+		}, {
+			value: 3,
+			text: 'A service provider, institution or organisation'
+		}, {
+			value: 4,
+			text: 'Nobody'
+		}],
+		type: 'TimeseriesFrequency',
+		variableId: 33
 	}]);
 
 	appConfig.constant('surveyTopics', [
