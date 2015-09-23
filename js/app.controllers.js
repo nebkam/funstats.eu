@@ -76,6 +76,8 @@
 	appControllers.controller('GamePlayController', ['$scope','characterService',function($scope,characterService) {
 		$scope.isLoading = true;
 		$scope.scene = '';
+		$scope.score = 0;
+
 		characterService.generate(function(character) {
 			$scope.isLoading = false;
 			$scope.scene = 'character';
