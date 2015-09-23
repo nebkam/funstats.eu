@@ -74,8 +74,8 @@
 	]);
 
 	appControllers.controller('GamePlayController',
-		['$scope','characterService','gameQuestions','gameQuestionsService',
-			function($scope,characterService,gameQuestions,gameQuestionsService) {
+		['$scope','characterService','gameQuestions',
+			function($scope,characterService,gameQuestions) {
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
