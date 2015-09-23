@@ -94,27 +94,57 @@
 	}]);
 
 	appServices.factory('characterService',
-		['$http','_','ageGroups','genders','countryList','btnApiKey',
-		function($http,_,ageGroups,genders,countryList,btnApiKey) {
+		['$http','$window','_','ageGroups','genders','countryList','btnApiKey',
+		function($http,$window,_,ageGroups,genders,countryList,btnApiKey) {
 		return {
 			/**
 			 * Generate a random user
 			 * @param {Function} cb Receives character object or null on fail
 			 */
 			generate: function(cb) {
-				var character = {
-					age: _.shuffle(ageGroups)[0],
-					gender: _.shuffle(genders)[0],
-					country: _.shuffle(countryList)[0]
-				};
-			$http
-				.get('http://www.behindthename.com/api/random.php', { params: {
-					key: btnApiKey,
-					gender: 'm',
-					usage: 'ser',
-					number: 1
-				} })
-				.then(cb);
+				var self = this,
+					character = {
+						age: _.shuffle(ageGroups)[0],
+						gender: _.shuffle(genders)[0],
+						country: _.shuffle(countryList)[0]
+					};
+				$http
+					.get('http://www.behindthename.com/api/random.php', { params: {
+						key: btnApiKey,
+						gender: character.gender.code,
+						usage: character.country.btn,
+						number: 1
+					} })
+					.then(function(res) {
+						var xml = self.parseXML(res.data);
+						try {
+							character.name = xml.childNodes[0].childNodes[1].childNodes[1].innerHTML;
+						} catch (e) {
+							character.name = 'Branko';
+						}
+						cb(character);
+					});
+			},
+			/**
+			 * Cross-browser XML parsing helper
+			 *
+			 * @see http://stackoverflow.com/a/17604251
+			 * @param {String} string
+			 * @throws {Error}
+			 * @return {Document}
+			 */
+			parseXML: function(string) {
+				if (typeof $window.DOMParser != "undefined") {
+					return ( new $window.DOMParser() ).parseFromString(string, "text/xml");
+				} else if (typeof $window.ActiveXObject != "undefined" &&
+					new $window.ActiveXObject("Microsoft.XMLDOM")) {
+					var xmlDoc = new $window.ActiveXObject("Microsoft.XMLDOM");
+					xmlDoc.async = "false";
+					xmlDoc.loadXML(string);
+					return xmlDoc;
+				} else {
+					throw new Error("No XML parser found");
+				}
 			}
 		};
 	}]);

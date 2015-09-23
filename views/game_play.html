@@ -16,10 +16,10 @@
 				<h3 class="panel-title">Character</h3>
 			</div>
 			<div class="panel-body text-center">
-				<p>Your character is</p>
-				<h2>John</h2>
-				<p>a 20-something yr old man</p>
-				<p>from Sweden</p>
+				<p>Your character is&hellip;</p>
+				<h2>{{ character.name }}</h2>
+				<p>a {{ character.age.readable }} yr old {{ character.gender.readable }}</p>
+				<p>from {{ character.country.name }}</p>
 			</div>
 		</div>
 		<div class="row v-offset-1-bottom">

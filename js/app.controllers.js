@@ -74,9 +74,11 @@
 	]);
 
 	appControllers.controller('GamePlayController', ['$scope','characterService',function($scope,characterService) {
-		$scope.scene = 'character';
-		characterService.generate(function(res) {
-			console.log(res);
+		$scope.isLoading = true;
+		characterService.generate(function(character) {
+			$scope.isLoading = false;
+			$scope.scene = 'character';
+			$scope.character = character;
 		});
 	}]);
 })();
