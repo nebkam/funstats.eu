@@ -26,7 +26,7 @@
 		</div>
 		<div class="row v-offset-1-bottom">
 			<div class="col-xs-6 col-xs-offset-6 text-center">
-				<a class="btn btn-block btn-primary" ng-click="startAnswering();">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+				<a class="btn btn-block btn-primary" ng-click="showQuestion();">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>
@@ -48,14 +48,14 @@
 				<p class="lead text-center h-spacing-5">
 					{{ question.question }}
 				</p>
-				<div class="radio h-spacing-5" ng-repeat="answer in question.answers" ng-hide="correctAnswer">
+				<div class="radio h-spacing-5" ng-repeat="answer in question.answers" ng-hide="answerSubmitted">
 					<label>
 						<input type="radio" name="optionsRadios" id="optionsRadios" value="{{ answer.value }}" ng-click="setSelected(answer.value);">
 						{{ answer.text }}
 					</label>
 				</div>
 				<ul class="list-group">
-					<li class="list-group-item" ng-class="{ 'list-group-item-success': answer.value == correctAnswer, 'list-group-item-danger': answer.value == selectedAnswer && answer.value != correctAnswer }" ng-repeat="answer in question.answers" ng-show="correctAnswer">
+					<li class="list-group-item" ng-class="{ 'list-group-item-success': answer.value == question.correctAnswer, 'list-group-item-danger': answer.value == selectedAnswer && answer.value != question.correctAnswer }" ng-repeat="answer in question.answers" ng-show="answerSubmitted">
 						{{ answer.text }}
 					</li>
 				</ul>
@@ -63,8 +63,8 @@
 		</div>
 		<div class="row v-offset-1-bottom">
 			<div class="col-xs-6 col-xs-offset-6 text-center">
-				<a ng-hide="correctAnswer" class="btn btn-block btn-primary" ng-disabled="!selectedAnswer" ng-click="selectedAnswer && submitAnswer();">Answer <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
-				<a ng-show="correctAnswer" class="btn btn-block btn-primary" ng-click="nextQuestion();">Next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+				<a ng-hide="answerSubmitted" class="btn btn-block btn-primary" ng-disabled="!selectedAnswer" ng-click="selectedAnswer && submitAnswer();">Answer <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+				<a ng-show="answerSubmitted" class="btn btn-block btn-primary" ng-click="showQuestion();">Next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>

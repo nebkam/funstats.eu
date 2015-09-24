@@ -94,9 +94,10 @@
 	}]);
 
 	appServices.factory('gameService',
-		['$http','$window','_','ageGroups','genders','countryList','baseUrl','userKey','btnApiKey',
-		function($http,$window,_,ageGroups,genders,countryList,baseUrl,userKey,btnApiKey) {
+		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','baseUrl','userKey','btnApiKey',
+		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,baseUrl,userKey,btnApiKey) {
 		return {
+			_questions: _.shuffle(gameQuestions),
 			/**
 			 * Generate a random user
 			 * @param {Function} cb Receives character object or null on fail
@@ -122,7 +123,7 @@
 						number: 1
 					} })
 					.then(function(res) {
-						var xml = self.parseXML(res.data);
+						var xml = self._parseXML(res.data);
 						try {
 							character.name = xml.childNodes[0].childNodes[1].childNodes[1].innerHTML;
 						} catch (e) {
@@ -139,7 +140,7 @@
 			 * @throws {Error}
 			 * @return {Document}
 			 */
-			parseXML: function(string) {
+			_parseXML: function(string) {
 				if (typeof $window.DOMParser != "undefined") {
 					return ( new $window.DOMParser() ).parseFromString(string, "text/xml");
 				} else if (typeof $window.ActiveXObject != "undefined" &&
@@ -153,21 +154,61 @@
 				}
 			},
 			/**
-			 * @param {Object} question
-			 * @param {String} filter
+			 * @param {String} characterFilter
 			 * @param {Function} cb
+			 * @return {Object}
 			 */
-			getCorrectAnswer: function(question,characterFilter,cb) {
-				$http
-					.get(baseUrl+'/'+question.type, { params: {
-						variableId: question.variableId,
-						filter: characterFilter,
-						user_key: userKey
-					} })
-					.then(function(res) {
-						console.log(res);
-						cb();
-					});
+			drawQuestion: function(characterFilter,cb) {
+				var question = this._questions.shift(),
+					self = this;
+				if (typeof question != 'undefined') {
+					$http
+						.get(baseUrl+'/'+question.type, { params: {
+							variableId: question.variableId,
+							filter: characterFilter,
+							user_key: userKey
+						} })
+						.then(function(res) {
+							var grouped = _.groupBy(res.data.TimeSeries,'Year'),
+								high2007 = self._getHighestValue(grouped[2007]),
+								high2011 = self._getHighestValue(grouped[2011]);
+
+							if (high2007 && high2011) {//Both years have data, pick any
+								var rand = _.random(1);
+								question.correctAnswer = (rand == 0) ? high2007.Value : high2011.Value;
+							} else {
+								if (high2007) {
+									question.correctAnswer = high2007.Value;
+								} else {
+									if (high2011) {
+										question.correctAnswer = high2011.Value;
+									} else {
+										question.correctAnswer = null;
+									}
+								}
+							}
+							cb(question);
+						});
+				} else {
+					cb(null);
+				}
+			},
+			/**
+			 * From an array of objects with `WeightedFrequency` property
+			 * get an object with highest `WeightedFrequency` property
+			 * or null if the answers were missing
+			 * @param {Array} arr
+			 * @return {Object}|null
+			 * @private
+			 */
+			_getHighestValue: function(arr) {
+				arr = _.filter(arr,function(i) { return i.Value !== null; });//Filer nulls
+				if (arr.length > 0) {
+					arr = _.sortBy(arr, 'WeightedFrequency').reverse();
+					return arr[0];
+				} else {
+					return null;
+				}
 			}
 		};
 	}]);

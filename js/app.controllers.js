@@ -115,41 +115,46 @@
 	]);
 
 	appControllers.controller('GamePlayController',
-		['$scope','_','gameQuestions','gameService',
-			function($scope,_,gameQuestions,gameService) {
+		['$scope','gameService',
+			function($scope,gameService) {
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
 
 		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
-			$scope.scene = 'character';
 			$scope.character = character;
+			$scope.scene = 'character';
 		});
 
-		var questions = _.shuffle(gameQuestions),
-			index = 0;
-		$scope.nextQuestion = function() {
+		$scope.showQuestion = function() {
+			$scope.isLoading = true;
+			//Reset
 			$scope.selectedAnswer = null;
-			$scope.correctAnswer = null;
-			$scope.question = questions[index];
-			index++;//TODO handle end of array
-		};
-		$scope.nextQuestion();
-
-		$scope.startAnswering = function() {
-			$scope.scene = 'question';
+			$scope.answerSubmitted = false;
+			//Draw (next)
+			gameService.drawQuestion($scope.character.filter,function(question) {
+				//Show it
+				if (question) {
+					$scope.question = question;
+					$scope.scene = 'question';
+					//Or end the game
+				} else {
+					$scope.scene = 'end';
+				}
+				$scope.isLoading = false;
+			});
 		};
 
 		$scope.setSelected = function(value) {
 			$scope.selectedAnswer = value;
 		};
+
 		$scope.submitAnswer = function() {
-			$scope.isLoading = true;
-			gameService.getCorrectAnswer($scope.question,$scope.character.filter,function() {
-				$scope.isLoading = false;
-				$scope.correctAnswer = 3;//TODO
-			});
+			$scope.answerSubmitted = true;
+			if ($scope.selectedAnswer == $scope.question.correctAnswer) {
+				$scope.score += 1;
+			}
 		};
 	}]);
 })();
