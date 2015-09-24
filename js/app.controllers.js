@@ -96,6 +96,10 @@
 		};
 		$scope.nextQuestion();
 
+		$scope.startAnswering = function() {
+			$scope.scene = 'question';
+		};
+
 		$scope.setSelected = function(value) {
 			$scope.selectedAnswer = value;
 		};
