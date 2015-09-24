@@ -165,17 +165,17 @@
 			 * @param {Function} cb
 			 */
 			getCorrectAnswer: function(question,characterFilter,cb) {
-				cb(3.0);
-				//$http
-				//	.get(baseUrl+'/'+question.type, { params: {
-				//		variableId: question.variableId,
-				//		filter: characterFilter,
-				//		user_key: userKey
-				//	} })
-				//	.then(function(res) {
-				//		console.log(res);
-				//		cb();
-				//	});
+				$http
+					.get(baseUrl+'/'+question.type, { params: {
+						variableId: question.variableId,
+						filter: characterFilter,
+						user_key: userKey
+					} })
+					.then(function(res) {
+						var grouped = _.groupBy(res.data.TimeSeries,'Year');
+						console.log(grouped);
+						cb(3);
+					});
 			}
 		};
 	}]);
