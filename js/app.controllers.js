@@ -80,15 +80,22 @@
 		$scope.scene = '';
 		$scope.score = 0;
 
-		$scope.question = _.shuffle(gameQuestions)[0];
-
 		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
 			$scope.scene = 'character';
 			$scope.character = character;
 		});
 
-		$scope.correctAnswer = null;//TODO init on every question
+		var questions = _.shuffle(gameQuestions),
+			index = 0;
+		$scope.nextQuestion = function() {
+			$scope.selectedAnswer = null;
+			$scope.correctAnswer = null;
+			$scope.question = questions[index];
+			index++;//TODO handle end of array
+		};
+		$scope.nextQuestion();
+
 		$scope.setSelected = function(value) {
 			$scope.selectedAnswer = value;
 		};
