@@ -26,7 +26,7 @@
 		</div>
 		<div class="row v-offset-1-bottom">
 			<div class="col-xs-6 col-xs-offset-6 text-center">
-				<a class="btn btn-block btn-primary" ng-click="startAnswering();">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+				<a class="btn btn-block btn-primary" ng-click="showQuestion();">Continue <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>
@@ -64,7 +64,7 @@
 		<div class="row v-offset-1-bottom">
 			<div class="col-xs-6 col-xs-offset-6 text-center">
 				<a ng-hide="correctAnswer" class="btn btn-block btn-primary" ng-disabled="!selectedAnswer" ng-click="selectedAnswer && submitAnswer();">Answer <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
-				<a ng-show="correctAnswer" class="btn btn-block btn-primary" ng-click="nextQuestion();">Next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
+				<a ng-show="correctAnswer" class="btn btn-block btn-primary" ng-click="showQuestion();">Next <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></a>
 			</div>
 		</div>
 	</div>

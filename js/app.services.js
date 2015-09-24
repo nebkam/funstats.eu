@@ -94,9 +94,10 @@
 	}]);
 
 	appServices.factory('gameService',
-		['$http','$window','_','ageGroups','genders','countryList','baseUrl','userKey','btnApiKey',
-		function($http,$window,_,ageGroups,genders,countryList,baseUrl,userKey,btnApiKey) {
+		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','baseUrl','userKey','btnApiKey',
+		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,baseUrl,userKey,btnApiKey) {
 		return {
+			_questions: _.shuffle(gameQuestions),
 			/**
 			 * Generate a random user
 			 * @param {Function} cb Receives character object or null on fail
@@ -122,7 +123,7 @@
 						number: 1
 					} })
 					.then(function(res) {
-						var xml = self.parseXML(res.data);
+						var xml = self._parseXML(res.data);
 						try {
 							character.name = xml.childNodes[0].childNodes[1].childNodes[1].innerHTML;
 						} catch (e) {
@@ -139,7 +140,7 @@
 			 * @throws {Error}
 			 * @return {Document}
 			 */
-			parseXML: function(string) {
+			_parseXML: function(string) {
 				if (typeof $window.DOMParser != "undefined") {
 					return ( new $window.DOMParser() ).parseFromString(string, "text/xml");
 				} else if (typeof $window.ActiveXObject != "undefined" &&
@@ -153,21 +154,28 @@
 				}
 			},
 			/**
+			 * @return {Object}
+			 */
+			drawQuestion: function() {
+				return this._questions.shift();
+			},
+			/**
 			 * @param {Object} question
-			 * @param {String} filter
+			 * @param {String} characterFilter
 			 * @param {Function} cb
 			 */
 			getCorrectAnswer: function(question,characterFilter,cb) {
-				$http
-					.get(baseUrl+'/'+question.type, { params: {
-						variableId: question.variableId,
-						filter: characterFilter,
-						user_key: userKey
-					} })
-					.then(function(res) {
-						console.log(res);
-						cb();
-					});
+				cb(3.0);
+				//$http
+				//	.get(baseUrl+'/'+question.type, { params: {
+				//		variableId: question.variableId,
+				//		filter: characterFilter,
+				//		user_key: userKey
+				//	} })
+				//	.then(function(res) {
+				//		console.log(res);
+				//		cb();
+				//	});
 			}
 		};
 	}]);
