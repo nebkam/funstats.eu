@@ -87,9 +87,10 @@
 		});
 
 		$scope.showQuestion = function() {
+			$scope.isLoading = true;
 			//Reset
 			$scope.selectedAnswer = null;
-			$scope.correctAnswer = null;
+			$scope.answerSubmitted = false;
 			//Draw (next)
 			gameService.drawQuestion($scope.character.filter,function(question) {
 				//Show it
@@ -100,6 +101,7 @@
 				} else {
 					$scope.scene = 'end';
 				}
+				$scope.isLoading = false;
 			});
 		};
 
@@ -108,11 +110,10 @@
 		};
 
 		$scope.submitAnswer = function() {
-			$scope.isLoading = true;
-			//gameService.getCorrectAnswer($scope.question,$scope.character.filter,function(answerValue) {
-			//	$scope.isLoading = false;
-			//	$scope.correctAnswer = answerValue;
-			//});
+			$scope.answerSubmitted = true;
+			if ($scope.selectedAnswer == $scope.question.correctAnswer) {
+				$scope.score += 1;
+			}
 		};
 	}]);
 })();

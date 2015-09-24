@@ -172,7 +172,21 @@
 							var grouped = _.groupBy(res.data.TimeSeries,'Year'),
 								high2007 = self._getHighestValue(grouped[2007]),
 								high2011 = self._getHighestValue(grouped[2011]);
-							console.log(high2007,high2011);
+
+							if (high2007 && high2011) {//Both years have data, pick any
+								var rand = _.random(1);
+								question.correctAnswer = (rand == 0) ? high2007.Value : high2011.Value;
+							} else {
+								if (high2007) {
+									question.correctAnswer = high2007.Value;
+								} else {
+									if (high2011) {
+										question.correctAnswer = high2011.Value;
+									} else {
+										question.correctAnswer = null;
+									}
+								}
+							}
 							cb(question);
 						});
 				} else {
@@ -180,8 +194,8 @@
 				}
 			},
 			/**
-			 * From an array of objects with `Value` property
-			 * get an object with highest `Value` property
+			 * From an array of objects with `WeightedFrequency` property
+			 * get an object with highest `WeightedFrequency` property
 			 * or null if the answers were missing
 			 * @param {Array} arr
 			 * @return {Object}|null
@@ -190,29 +204,11 @@
 			_getHighestValue: function(arr) {
 				arr = _.filter(arr,function(i) { return i.Value !== null; });//Filer nulls
 				if (arr.length > 0) {
-					arr = _.sortBy(arr, 'Value').reverse();
+					arr = _.sortBy(arr, 'WeightedFrequency').reverse();
 					return arr[0];
 				} else {
 					return null;
 				}
-			},
-			/**
-			 * @param {Object} question
-			 * @param {String} characterFilter
-			 * @param {Function} cb
-			 */
-			getCorrectAnswer: function(question,characterFilter,cb) {
-				$http
-					.get(baseUrl+'/'+question.type, { params: {
-						variableId: question.variableId,
-						filter: characterFilter,
-						user_key: userKey
-					} })
-					.then(function(res) {
-						var grouped = _.groupBy(res.data.TimeSeries,'Year');
-						console.log(grouped);
-						cb(3);
-					});
 			}
 		};
 	}]);
