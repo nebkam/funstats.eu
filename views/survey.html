@@ -41,4 +41,10 @@
 			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next question</button>
 		</div>
 	</div>
+	<div class="col-xs-6 col-xs-offset-6 text-center v-offset-1" ng-show="percentage" ng-click="showCharts();">
+		<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Show me charts</button>	
+	</div>
+	<div>
+		<div google-chart chart="{{ chartObject }}" ng-show="true"></div>
+	</div>
 </div>

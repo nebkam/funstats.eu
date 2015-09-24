@@ -1,5 +1,5 @@
 (function() {
-	var appControllers = angular.module('app.controllers',['app.services','app.config','underscore']);
+	var appControllers = angular.module('app.controllers',['app.services','app.config','underscore', 'googlechart']);
 
 	appControllers.controller('SurveyController', ['$scope','_','questionsService','surveyTopics',
 		function($scope,_,questionsService,surveyTopics) {
@@ -22,6 +22,8 @@
 			$scope.setSelected = function(value) {
 				$scope.selected = value;
 			};
+
+	
 			$scope.submit = function() {
 				$scope.isLoading = true;
 				var selectedOption = _.where($scope.answers,{ value: $scope.selected });
@@ -31,6 +33,45 @@
 					$scope.isLoading = false;
 				});
 			};
+
+			$scope.showCharts = function() {
+				$scope.percentages = [];
+				questionsService.getAllPercents($scope.apiUrl, function(percents) {
+					angular.forEach(percents, function(value, key){
+					
+					});		
+				});	
+
+				$scope.showChart = true;
+				$scope.chartObject = {};
+		    	$scope.chartObject.type = "BarChart";
+
+			    $scope.chartObject.data = {"cols": [
+			        {id: "t", label: "Answer", type: "string"},
+			        {id: "s", label: "Percent", type: "number"}
+			    ], "rows": [
+			        {c: [
+			            {v: "Odg 1"},
+			            {v: 3},
+			        ]},
+			        {c: [
+			            {v: "Odg 2"},
+			            {v: 5}
+			        ]},
+			        {c: [
+			            {v: "Odg 3"},
+			            {v: 1},
+			        ]},
+			        {c: [
+			            {v: "Odg 4"},
+			            {v: 2},
+			        ]}
+			    ]};
+
+	      	  $scope.chartObject.options = {
+	      	 	 'title': 'What others said'
+	  		  };
+			}
 		}]);
 
 	appControllers.controller('TriviaController',

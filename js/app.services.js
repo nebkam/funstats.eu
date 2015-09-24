@@ -206,6 +206,27 @@
 						});
 						cb( Math.round((myAnswerVal/total) * 100), Math.round((myAnswerVal2/total2) * 100) );
 					});
+			},
+
+			getAllPercents: function(apiUrl,cb) {
+				var total = 0;
+				var answers = [];
+				$http
+					.get(baseUrl + apiUrl + '&user_key=' + userKey)
+					.success(function(res){
+						angular.forEach(res.TimeSeries, function(value, key){
+							if (value.Year == 2011){
+								total = total + value.WeightedFrequency;								
+							}							
+						});
+						angular.forEach(res.TimeSeries, function(value, key){
+							if (value.Year == 2011){
+								answers[key] = Math.round((value.WeightedFrequency / total) * 100);								
+							}							
+						});
+					console.log(answers);	
+					cb (answers);
+					});
 			}
 		};
 	}]);
