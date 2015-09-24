@@ -91,15 +91,16 @@
 			$scope.selectedAnswer = null;
 			$scope.correctAnswer = null;
 			//Draw (next)
-			var question = gameService.drawQuestion();
-			//Show it
-			if (typeof question != 'undefined') {
-				$scope.question = question;
-				$scope.scene = 'question';
-			//Or end the game
-			} else {
-				$scope.scene = 'end';
-			}
+			gameService.drawQuestion($scope.character.filter,function(question) {
+				//Show it
+				if (question) {
+					$scope.question = question;
+					$scope.scene = 'question';
+					//Or end the game
+				} else {
+					$scope.scene = 'end';
+				}
+			});
 		};
 
 		$scope.setSelected = function(value) {
@@ -108,10 +109,10 @@
 
 		$scope.submitAnswer = function() {
 			$scope.isLoading = true;
-			gameService.getCorrectAnswer($scope.question,$scope.character.filter,function(answerValue) {
-				$scope.isLoading = false;
-				$scope.correctAnswer = answerValue;
-			});
+			//gameService.getCorrectAnswer($scope.question,$scope.character.filter,function(answerValue) {
+			//	$scope.isLoading = false;
+			//	$scope.correctAnswer = answerValue;
+			//});
 		};
 	}]);
 })();

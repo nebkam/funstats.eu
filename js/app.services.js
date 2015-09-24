@@ -154,10 +154,47 @@
 				}
 			},
 			/**
+			 * @param {String} characterFilter
+			 * @param {Function} cb
 			 * @return {Object}
 			 */
-			drawQuestion: function() {
-				return this._questions.shift();
+			drawQuestion: function(characterFilter,cb) {
+				var question = this._questions.shift(),
+					self = this;
+				if (typeof question != 'undefined') {
+					$http
+						.get(baseUrl+'/'+question.type, { params: {
+							variableId: question.variableId,
+							filter: characterFilter,
+							user_key: userKey
+						} })
+						.then(function(res) {
+							var grouped = _.groupBy(res.data.TimeSeries,'Year'),
+								high2007 = self._getHighestValue(grouped[2007]),
+								high2011 = self._getHighestValue(grouped[2011]);
+							console.log(high2007,high2011);
+							cb(question);
+						});
+				} else {
+					cb(null);
+				}
+			},
+			/**
+			 * From an array of objects with `Value` property
+			 * get an object with highest `Value` property
+			 * or null if the answers were missing
+			 * @param {Array} arr
+			 * @return {Object}|null
+			 * @private
+			 */
+			_getHighestValue: function(arr) {
+				arr = _.filter(arr,function(i) { return i.Value !== null; });//Filer nulls
+				if (arr.length > 0) {
+					arr = _.sortBy(arr, 'Value').reverse();
+					return arr[0];
+				} else {
+					return null;
+				}
 			},
 			/**
 			 * @param {Object} question
