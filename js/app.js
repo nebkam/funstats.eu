@@ -4,7 +4,8 @@
 		return $window._; // assumes underscore has already been loaded on the page
 	}]);
 
-	var app = angular.module('app', ['app.config','app.services','app.controllers','ngRoute','underscore']);
+	var app = angular.module('app',
+		['app.config','app.services','app.controllers','ngRoute','underscore']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
