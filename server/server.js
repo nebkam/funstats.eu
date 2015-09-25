@@ -1,8 +1,24 @@
-var http = require("http"),
-	AWS = require('aws-sdk');
+var express    = require('express'),
+	app        = express(),
+	bodyParser = require('body-parser');
 
-http.createServer(function (request, response) {
-	response.writeHead(200, {"Content-Type": "text/plain"});
-	response.write("Hello World");
-	response.end();
-}).listen(process.env.PORT || 8888);
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var port = process.env.PORT || 8888;
+
+//Routes
+var router = express.Router();
+
+router
+	.route('/scores')
+	.get(function(req,res) {
+		res.json([]);
+	})
+	.post(function(req,res) {
+		res.json([]);
+	});
+app.use('/api', router);
+app.listen(port);

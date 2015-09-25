@@ -1,7 +1,9 @@
 {
   "name": "fun-stats-server",
   "version": "0.0.1",
+  "main": "server.js",
   "dependencies": {
-    "aws-sdk": "2.2.x"
+    "express": "4.13.x",
+    "body-parser": "1.14.x"
   }
 }
