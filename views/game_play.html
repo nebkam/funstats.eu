@@ -38,8 +38,8 @@
 					<img class="avatar-xs" ng-src="../img/avatars/{{ character.avatar }}.svg"/>
 					{{ character.name }}
 					<img class="flag" ng-src="../img/flags/{{ character.country.code }}.png"/>
-					<span class="score-block pull-right">
-						<span class="score">{{ score }}</span>
+					<span class="pull-right">
+						{{ score }}
 						<span class="glyphicon glyphicon-star"></span>
 					</span>
 				</h3>
@@ -69,4 +69,16 @@
 		</div>
 	</div>
 
+	<div class="scene" ng-show="scene == 'end' && !isLoading">
+		<div class="panel panel-default v-offset-1">
+			<div class="panel-heading">
+				<h3 class="panel-title">Game Over</h3>
+			</div>
+			<div class="panel-body text-center">
+				<p class="lead">Congratulations!</p>
+				<p>You scored</p>
+				<p class="lead">{{ score }} <span class="glyphicon glyphicon-star"></span></p>
+			</div>
+		</div>
+	</div>
 </div>
