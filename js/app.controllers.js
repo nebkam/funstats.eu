@@ -120,6 +120,8 @@
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
+		$scope.playerName = '';
+		$scope.playerNameSubmitted = false;
 
 		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
@@ -155,6 +157,10 @@
 			if ($scope.selectedAnswer == $scope.question.correctAnswer) {
 				$scope.score += 1;
 			}
+		};
+
+		$scope.submitName = function() {
+			$scope.playerNameSubmitted = true;
 		};
 	}]);
 })();

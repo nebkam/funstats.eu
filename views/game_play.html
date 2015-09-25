@@ -75,9 +75,15 @@
 				<h3 class="panel-title">Game Over</h3>
 			</div>
 			<div class="panel-body text-center">
-				<p class="lead">Congratulations!</p>
-				<p>You scored</p>
-				<p class="lead">{{ score }} <span class="glyphicon glyphicon-star"></span></p>
+				<h1>You scored {{ score }} <span class="glyphicon glyphicon-star"></span></h1>
+				<p>You may be listed in our high-score table!</p>
+				<form class="form-inline v-offset-1" ng-hide="playerNameSubmitted">
+					<div class="form-group">
+						<label class="sr-only" for="playerName">Your name</label>
+						<input type="text" class="form-control" id="playerName" placeholder="Your name" ng-model="playerName">
+					</div>
+					<button type="submit" class="btn btn-primary" ng-disabled="!playerName.length" ng-click="submitName();">Save</button>
+				</form>
 			</div>
 		</div>
 	</div>
