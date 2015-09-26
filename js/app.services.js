@@ -2,8 +2,8 @@
 	var appServices = angular.module('app.services',['app.config','underscore','ngStorage']);
 
 	appServices.factory('triviaService',
-		['$http','_','baseUrl','userKey','triviaTypes',
-			function($http,_,baseUrl,userKey,triviaTypes) {
+		['$http','_','triviaTypes','apiParams',
+			function($http,_,triviaTypes,apiParams) {
 		return {
 			types: _.shuffle(triviaTypes),
 			typeIndex: 0,
@@ -22,10 +22,10 @@
 			getFact: function(country,triviaType,cb) {
 				var self = this;
 				$http
-					.get(baseUrl + triviaType.apiUrl, { cache: true, params: {
+					.get(apiParams.euLife.url + triviaType.apiUrl, { cache: true, params: {
 						variableId: triviaType.variableId,
 						filter: triviaType.filter+country.filter,
-						user_key: userKey
+						user_key: apiParams.euLife.key
 					}})
 					.success(function(data) {
 						var fact = {
@@ -60,7 +60,9 @@
 		};
 	}]);
 
-	appServices.factory('myCountryService', ['$http','$localStorage', function($http,$localStorage) {
+	appServices.factory('myCountryService',
+		['$http','$localStorage','apiParams',
+			function($http,$localStorage,apiParams) {
 		return {
 			getCode: function(cb) {
 				if ($localStorage.myCountryCode) {
@@ -68,11 +70,11 @@
 				} else {
 					if (navigator.geolocation) {
 						navigator.geolocation.getCurrentPosition(function(position) {
-							$http.get('http://ws.geonames.org/countryCode', { cache: true, params: {
+							$http.get(apiParams.geoNames.url, { cache: true, params: {
 								lat: position.coords.latitude,
 								lng: position.coords.longitude,
 								type: 'JSON',
-								username: 'nebkam'
+								username: apiParams.geoNames.key
 							}}).then(function(res) {
 								if (res.data.countryCode) {
 									var code = res.data.countryCode.toLowerCase();
@@ -94,8 +96,8 @@
 	}]);
 
 	appServices.factory('gameService',
-		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','baseUrl','userKey','btnApiKey','scoreBaseUrl',
-		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,baseUrl,userKey,btnApiKey,scoreBaseUrl) {
+		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','apiParams',
+		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,apiParams) {
 		return {
 			_questions: _.shuffle(gameQuestions),
 			/**
@@ -116,8 +118,8 @@
 				character.filter = [character.age.filter,character.gender.filter,character.country.filter].join('|');
 
 				$http
-					.get('http://www.behindthename.com/api/random.php', { params: {
-						key: btnApiKey,
+					.get(apiParams.behindTheName.url, { params: {
+						key: apiParams.behindTheName.key,
 						gender: character.gender.code,
 						usage: character.country.btn,
 						number: 1
@@ -163,10 +165,10 @@
 					self = this;
 				if (typeof question != 'undefined') {
 					$http
-						.get(baseUrl+'/'+question.type, { params: {
+						.get(apiParams.euLife.url+'/'+question.type, { params: {
 							variableId: question.variableId,
 							filter: characterFilter,
-							user_key: userKey
+							user_key: apiParams.euLife.key
 						} })
 						.then(function(res) {
 							var grouped = _.groupBy(res.data.TimeSeries,'Year'),
@@ -217,7 +219,7 @@
 			 * @param character
 			 */
 			saveScore: function(score,name,character) {
-				$http.post(scoreBaseUrl, {
+				$http.post(apiParams.scores.url, {
 					score: score,
 					name: name,
 					character: {
@@ -239,7 +241,8 @@
 		};
 	}]);
 
-	appServices.factory('questionsService', ['$http','_','surveyQuestions','baseUrl','userKey', function($http,_,surveyQuestions,baseUrl,userKey) {
+	appServices.factory('questionsService',
+		['$http','_','surveyQuestions','apiParams', function($http,_,surveyQuestions,apiParams) {
 		return {
 			pickRandom: function() {
 				return _.shuffle(surveyQuestions)[0];
@@ -255,7 +258,7 @@
 					myAnswerVal = 0,
 					myAnswerVal2 = 0;
 				$http
-					.get(baseUrl + apiUrl + '&user_key=' + userKey, { cache: true })
+					.get(apiParams.euLife.url + apiUrl + '&user_key=' + apiParams.euLife.key, { cache: true })
 					.success(function(res) {
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011) {
@@ -279,7 +282,7 @@
 				var total = 0;
 				var answers = [];
 				$http
-					.get(baseUrl + apiUrl + '&user_key=' + userKey)
+					.get(apiParams.euLife.url + apiUrl + '&user_key=' + apiParams.euLife.key)
 					.success(function(res){
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011){

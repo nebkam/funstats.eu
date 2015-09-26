@@ -1,13 +1,23 @@
 (function() {
 	var appConfig = angular.module('app.config',[]);
 
-	appConfig.constant('baseUrl', 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS');
-
-	appConfig.constant('scoreBaseUrl', 'http://api.funstats.eu/scores');
-
-	appConfig.constant('userKey', '32c520dabe65f1a197868d539b89048b');
-
-	appConfig.constant('btnApiKey', 'ne684508');
+	appConfig.constant('apiParams', {
+		euLife: {
+			url: 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS',
+			key: '32c520dabe65f1a197868d539b89048b'
+		},
+		behindTheName: {
+			url: 'http://www.behindthename.com/api/random.php',
+			key: 'ne684508'
+		},
+		geoNames: {
+			url: 'http://ws.geonames.org/countryCode',
+			key: 'nebkam'
+		},
+		scores: {
+			url: 'http://api.funstats.eu/scores'
+		}
+	});
 
 	appConfig.constant('surveyQuestions', [
 		{
