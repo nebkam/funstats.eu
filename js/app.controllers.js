@@ -173,6 +173,7 @@
 
 		$scope.submitName = function() {
 			$scope.playerNameSubmitted = true;
+			gameService.saveScore($scope.score,$scope.playerName,$scope.character);
 		};
 	}]);
 })();

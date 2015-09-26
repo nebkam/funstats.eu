@@ -94,8 +94,8 @@
 	}]);
 
 	appServices.factory('gameService',
-		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','baseUrl','userKey','btnApiKey',
-		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,baseUrl,userKey,btnApiKey) {
+		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','baseUrl','userKey','btnApiKey','scoreBaseUrl',
+		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,baseUrl,userKey,btnApiKey,scoreBaseUrl) {
 		return {
 			_questions: _.shuffle(gameQuestions),
 			/**
@@ -209,6 +209,24 @@
 				} else {
 					return null;
 				}
+			},
+			/**
+			 *
+			 * @param score
+			 * @param name
+			 * @param character
+			 */
+			saveScore: function(score,name,character) {
+				$http.post(scoreBaseUrl, {
+					score: score,
+					name: name,
+					character: {
+						name: character.name,
+						age: character.age.code,
+						gender: character.gender.code,
+						country: character.country.code
+					}
+				})
 			}
 		};
 	}]);

@@ -3,6 +3,9 @@
 
 	appConfig.constant('baseUrl', 'https://api.ukdataservice.ac.uk/V1/datasets/EQLS');
 
+	appConfig.constant('scoreBaseUrl', 'http://funstats-nk.rhcloud.com/api/scores');
+	//appConfig.constant('scoreBaseUrl', 'http://localhost:8888/api/scores');
+
 	appConfig.constant('userKey', '32c520dabe65f1a197868d539b89048b');
 
 	appConfig.constant('btnApiKey', 'ne684508');
