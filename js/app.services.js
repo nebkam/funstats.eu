@@ -213,6 +213,14 @@
 		};
 	}]);
 
+	appServices.factory('timer', ['$window',function($window) {
+		return {
+			init: function(options) {
+				return new $window.Tock(options);
+			}
+		};
+	}]);
+
 	appServices.factory('questionsService', ['$http','_','surveyQuestions','baseUrl','userKey', function($http,_,surveyQuestions,baseUrl,userKey) {
 		return {
 			pickRandom: function() {

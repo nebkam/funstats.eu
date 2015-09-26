@@ -115,8 +115,9 @@
 	]);
 
 	appControllers.controller('GamePlayController',
-		['$scope','gameService',
-			function($scope,gameService) {
+		['$scope','gameService','timer',
+			function($scope,gameService,timer) {
+		$scope.timer = timer.init();
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
@@ -140,6 +141,8 @@
 				if (question) {
 					$scope.question = question;
 					$scope.scene = 'question';
+					$scope.timer.reset();
+					$scope.timer.start('0:00');
 					//Or end the game
 				} else {
 					$scope.scene = 'end';
@@ -155,7 +158,16 @@
 		$scope.submitAnswer = function() {
 			$scope.answerSubmitted = true;
 			if ($scope.selectedAnswer == $scope.question.correctAnswer) {
-				$scope.score += 1;
+				var timeTook = $scope.timer.lap();
+				if (timeTook < 10000) {
+					if (timeTook < 5000) {
+						$scope.score += 3;
+					} else {
+						$scope.score += 2;
+					}
+				} else {
+					$scope.score += 1;
+				}
 			}
 		};
 
