@@ -23,7 +23,7 @@
 			<button type="button" class="btn btn-default btn-block" ng-click="nextQuestion();">Skip</button>
 		</div>
 		<div class="col-xs-6 text-center">
-			<button type="button" class="btn btn-primary btn-block" ng-disabled="!selected" ng-click="submit();">Submit</button>
+			<button type="button" class="btn btn-primary btn-block" ng-disabled="!selected" ng-click="submit();">Submit <span class="glyphicon glyphicon-triangle-right eu-yellow" aria-hidden="true"></span></button>
 		</div>
 	</div>
 	<div class="row text-center v-offset-1 v-offset-1-bottom h-spacing-5" ng-show="percentage[0]">
@@ -38,10 +38,10 @@
 	</div>	
 	<div class="row text-center v-offset-1-bottom" ng-show="percentage">
 		<div class="col-xs-6 text-center v-offset-1" ng-show="percentage" ng-click="showCharts();">
-			<button type="button" class="btn btn-default btn-block">Show me charts</button>
+			<button type="button" class="btn btn-default btn-block">Show Me Charts</button>
 		</div>
 		<div class="col-xs-6 text-center v-offset-1">
-			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next question</button>
+			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next Question <span class="glyphicon glyphicon-triangle-right eu-yellow" aria-hidden="true"></span></button>
 		</div>
 	</div>
 	<div ng-show="showChart">

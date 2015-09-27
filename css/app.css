@@ -18,6 +18,7 @@
 .header img {
 	width: 66px;
 }
+/* Override Bootstrap defaults */
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
 	background-color: #FFCC00;
 	color: #0055a5;
@@ -27,6 +28,16 @@
 	text-transform: uppercase;
 	border-radius: 0 0 4px 4px;
 }
+.btn {
+	font-family: 'Candal', sans-serif;
+}
+.btn-primary {
+	background-color: #0055a5;
+}
+.eu-yellow {
+	color: #fc0;
+}
+
 .v-offset-1 {
 	margin-top: 1em;
 }
@@ -55,11 +66,4 @@
 }
 .flag {
 	margin-bottom: 2px;
-}
-button.list-group-item:active {
-	color: #fff;
-	background-color: #337ab7;
-}
-button.list-group-item[disabled]:hover {
-	background-color: #fff;
 }
