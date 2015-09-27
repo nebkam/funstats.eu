@@ -37,20 +37,20 @@
 			$scope.showCharts = function() {
 				$scope.percentages = [];
 				questionsService.getAllPercents($scope.apiUrl, $scope.answers, function(percents) {
-				$scope.showChart = true;
-				$scope.chartObject = {};
-		    	$scope.chartObject.type = "BarChart";
+					$scope.showChart = true;
+					$scope.chartObject = {};
+					$scope.chartObject.type = "BarChart";
 
-			    $scope.chartObject.data = {"cols": [
-			        {id: "t", label: "Answer", type: "string"},
-			        {id: "s", label: "Percent", type: "number"}
-			    ]};
+					$scope.chartObject.data = {"cols": [
+						{id: "t", label: "Answer", type: "string"},
+						{id: "s", label: "Percent", type: "number"}
+					]};
 
-			    $scope.chartObject.data.rows = percents;
+					$scope.chartObject.data.rows = percents;
 
-	      	  $scope.chartObject.options = {
-	      	 	 'title': 'What others said'
-	  		  };
+				  $scope.chartObject.options = {
+					 'title': 'What others said'
+				  };
 				});	
 			}
 		}]);

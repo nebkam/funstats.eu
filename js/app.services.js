@@ -289,9 +289,14 @@
 					});
 			},
 
+			/**
+			 * @param {String} apiUrl
+			 * @param {Array} answers
+			 * @param {Function} cb
+			 */
 			getAllPercents: function(apiUrl, answers, cb) {
 				var total = 0;
-				ret = [];
+				var ret = [];
 
 				$http
 					.get(apiParams.euLife.url + apiUrl + '&user_key=' + apiParams.euLife.key)
