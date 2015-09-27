@@ -1,9 +1,31 @@
+@font-face {
+	font-family: 'Candal';
+	font-weight: 400;
+	font-style: normal;
+	src: url('/fonts/Candal-regular/Candal-regular.eot');
+	src: url('/fonts/Candal-regular/Candal-regular.eot?#iefix') format('embedded-opentype'),
+	local('Candal'),
+	local('Candal-regular'),
+	url('/fonts/Candal-regular/Candal-regular.woff2') format('woff2'),
+	url('/fonts/Candal-regular/Candal-regular.woff') format('woff'),
+	url('/fonts/Candal-regular/Candal-regular.ttf') format('truetype'),
+	url('/fonts/Candal-regular/Candal-regular.svg#Candal') format('svg');
+}
 .header {
 	background-color: #0055a5;
 	padding: 1em;
 }
 .header img {
 	width: 66px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+	background-color: #FFCC00;
+	color: #0055a5;
+}
+.nav-pills>li>a {
+	font-family: 'Candal', sans-serif;
+	text-transform: uppercase;
+	border-radius: 0 0 4px 4px;
 }
 .v-offset-1 {
 	margin-top: 1em;
