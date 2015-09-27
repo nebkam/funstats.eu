@@ -310,10 +310,11 @@
 							if (value.Year == 2011){
 								var answer = _.where(answers, { value: value.Value });
 								if (_.isEmpty(answer) == false){
-									ret.push({
-									label : answer[0].text,
-									percentage: Math.round((value.WeightedFrequency/total) * 100)
-									});		
+									ret.push({ c: [
+											{ v : answer[0].text },
+											{ v : Math.round((value.WeightedFrequency/total) * 100)}
+										]									
+									});	
 								}
 							}							
 						});
