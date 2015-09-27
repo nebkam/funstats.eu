@@ -44,7 +44,7 @@
 			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next question</button>
 		</div>
 	</div>
-	<div>
+	<div ng-show="showChart">
 		<div google-chart chart="{{ chartObject }}" ng-show="true"></div>
 	</div>
 </div>

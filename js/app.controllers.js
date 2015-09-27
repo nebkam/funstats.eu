@@ -4,6 +4,7 @@
 	appControllers.controller('SurveyController', ['$scope','_','questionsService','surveyTopics',
 		function($scope,_,questionsService,surveyTopics) {
 			$scope.nextQuestion = function() {
+				$scope.showChart = false;
 				var random = questionsService.pickRandom();
 				$scope.question = random.question;
 				$scope.answers = random.answers;
@@ -40,7 +41,7 @@
 				$scope.showChart = true;			
 				$scope.chartObject = {};
 		    	$scope.chartObject.type = "BarChart";
-		    	
+
 			    $scope.chartObject.data = {"cols": [
 			        {id: "t", label: "Answer", type: "string"},
 			        {id: "s", label: "Percent", type: "number"}
@@ -49,7 +50,7 @@
 			    $scope.chartObject.data.rows = percents;
 
 	      	  $scope.chartObject.options = {
-	      	 	 'title': 'What others said'
+	      	 	 'title': 'What others answered on "' + $scope.question + '"'
 	  		  };
 				});	
 			}
