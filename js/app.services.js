@@ -213,7 +213,6 @@
 				}
 			},
 			/**
-			 *
 			 * @param score
 			 * @param name
 			 * @param character
@@ -229,6 +228,18 @@
 						country: character.country.code
 					}
 				})
+			},
+			/**
+			 * @param {Function} cb
+			 */
+			getHighScores: function(cb) {
+				$http
+					.get(apiParams.scores.url)
+					.then(function(res) {
+						if (res.data.success) {
+							cb(res.data.scores);
+						}
+					});
 			}
 		};
 	}]);

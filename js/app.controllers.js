@@ -121,13 +121,15 @@
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
+		$scope.highScores = [];
 		$scope.playerName = '';
 		$scope.playerNameSubmitted = false;
 
 		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
 			$scope.character = character;
-			$scope.scene = 'character';
+			//$scope.scene = 'character';
+$scope.scene = 'end';$scope.score=10;
 		});
 
 		$scope.showQuestion = function() {
@@ -174,6 +176,12 @@
 		$scope.submitName = function() {
 			$scope.playerNameSubmitted = true;
 			gameService.saveScore($scope.score,$scope.playerName,$scope.character);
+		};
+
+		$scope.showHighScores = function() {
+			gameService.getHighScores(function(scores) {
+				$scope.highScores = scores;
+			});
 		};
 	}]);
 })();
