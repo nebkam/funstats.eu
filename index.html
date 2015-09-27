@@ -4,19 +4,26 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>App Challenge</title>
+		<title>Fun Stats.eu</title>
 		<link rel="stylesheet" href="./css/bootstrap-3.3.5.min.css">
 		<link rel="stylesheet" href="./css/app.css">
 		<link rel="stylesheet" href="./css/loader.css" type="text/css">
 
 	</head>
 	<body ng-app="app">
+	<div class="container-fluid text-center header">
+		<a href="#/"><img src="./img/logo.png"></a>
+	</div>
+	<!--<div class="container-fluid text-left" style="background-color: #0055a5;padding: .5em;">-->
+		<!--<img style="width: 5%;" src="./img/logo.png">-->
+	<!--</div>-->
+
 	<div ng-controller="HeaderController">	
 		<ul class="nav nav-pills nav-justified">
-			<li role="presentation" ng-class="{ active: isActive('/home')}"><a href="#home">Home</a></li>
-			<li role="presentation" ng-class="{ active: isActive('/survey')}"><a href="#survey">Survey</a></li>
-			<li role="presentation" ng-class="{ active: isActive('/trivia')}"><a href="#trivia">Did you know..?</a></li>
-			<li role="presentation" ng-class="{ active: isActive('/game/intro') || isActive('/game/play')}"><a href="#game/intro">Play a Game</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/survey')}"><a href="#/survey">Survey</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/trivia')}"><a href="#/trivia">Did you know..?</a></li>
+			<li role="presentation" ng-class="{ active: isActive('/game/intro') || isActive('/game/play')}"><a href="#/game/intro">Play a Game</a></li>
 		</ul>
 	</div>	
 	<div ng-view></div>

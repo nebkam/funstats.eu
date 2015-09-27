@@ -1,3 +1,10 @@
+.header {
+	background-color: #0055a5;
+	padding: 1em;
+}
+.header img {
+	width: 66px;
+}
 .v-offset-1 {
 	margin-top: 1em;
 }

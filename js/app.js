@@ -9,6 +9,9 @@
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
+			.when('/', {
+				templateUrl: 'views/home.html'
+			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'
 			})
@@ -21,8 +24,6 @@
 			.when('/game/play', {
 				templateUrl: 'views/game_play.html'
 			})
-			.otherwise({
-				templateUrl: 'views/home.html'
-			});
+			.otherwise({redirectTo : '/'});
 	}]);
 })();
