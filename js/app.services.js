@@ -308,7 +308,7 @@
 						});
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011){
-								answer = _.where(answers, { value: value.Value });
+								var answer = _.where(answers, { value: value.Value });
 								if (_.isEmpty(answer) == false){
 									ret.push({
 									label : answer[0].text,
