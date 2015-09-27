@@ -128,8 +128,7 @@
 		gameService.generateCharacter(function(character) {
 			$scope.isLoading = false;
 			$scope.character = character;
-			//$scope.scene = 'character';
-$scope.scene = 'end';$scope.score=10;
+			$scope.scene = 'character';
 		});
 
 		$scope.showQuestion = function() {
