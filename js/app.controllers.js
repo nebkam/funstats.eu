@@ -103,6 +103,7 @@
 		$scope.isLoading = true;
 		$scope.scene = '';
 		$scope.score = 0;
+		$scope.highScores = [];
 		$scope.playerName = '';
 		$scope.playerNameSubmitted = false;
 
@@ -156,6 +157,12 @@
 		$scope.submitName = function() {
 			$scope.playerNameSubmitted = true;
 			gameService.saveScore($scope.score,$scope.playerName,$scope.character);
+		};
+
+		$scope.showHighScores = function() {
+			gameService.getHighScores(function(scores) {
+				$scope.highScores = scores;
+			});
 		};
 	}]);
 })();
