@@ -36,12 +36,7 @@
 
 			$scope.showCharts = function() {
 				$scope.percentages = [];
-				questionsService.getAllPercents($scope.apiUrl, function(percents) {
-					angular.forEach(percents, function(value, key){
-					
-					});		
-				});	
-
+				questionsService.getAllPercents($scope.apiUrl, $scope.answers, function(percents) {
 				$scope.showChart = true;
 				$scope.chartObject = {};
 		    	$scope.chartObject.type = "BarChart";
@@ -49,28 +44,14 @@
 			    $scope.chartObject.data = {"cols": [
 			        {id: "t", label: "Answer", type: "string"},
 			        {id: "s", label: "Percent", type: "number"}
-			    ], "rows": [
-			        {c: [
-			            {v: "Odg 1"},
-			            {v: 3}
-			        ]},
-			        {c: [
-			            {v: "Odg 2"},
-			            {v: 5}
-			        ]},
-			        {c: [
-			            {v: "Odg 3"},
-			            {v: 1}
-			        ]},
-			        {c: [
-			            {v: "Odg 4"},
-			            {v: 2}
-			        ]}
 			    ]};
+
+			    $scope.chartObject.data.rows = percents;
 
 	      	  $scope.chartObject.options = {
 	      	 	 'title': 'What others said'
 	  		  };
+				});	
 			}
 		}]);
 

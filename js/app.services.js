@@ -278,9 +278,10 @@
 					});
 			},
 
-			getAllPercents: function(apiUrl,cb) {
+			getAllPercents: function(apiUrl, answers, cb) {
 				var total = 0;
-				var answers = [];
+				ret = [];
+
 				$http
 					.get(apiParams.euLife.url + apiUrl + '&user_key=' + apiParams.euLife.key)
 					.success(function(res){
@@ -291,11 +292,16 @@
 						});
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011){
-								answers[key] = Math.round((value.WeightedFrequency / total) * 100);								
+								answer = _.where(answers, { value: value.Value });
+								if (_.isEmpty(answer) == false){
+									ret.push({
+									label : answer[0].text,
+									percentage: Math.round((value.WeightedFrequency/total) * 100)
+									});		
+								}
 							}							
 						});
-					console.log(answers);	
-					cb (answers);
+					cb (ret);
 					});
 			}
 		};
