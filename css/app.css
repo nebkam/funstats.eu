@@ -32,6 +32,20 @@
 	background: url('../img/loader.gif') no-repeat center center;
 	min-height: 64px;
 }
+h3.panel-title {
+	font-family: 'Candal', sans-serif;
+	color: #444;
+}
+.panel-title.with-icon {
+	position: relative;
+	padding-left: 18px;
+}
+.panel-title.with-icon .glyphicon {
+	position: absolute;
+	top: -2px;
+	left: -8px;
+	font-size: 20px;
+}
 .btn {
 	font-family: 'Candal', sans-serif;
 }
