@@ -1,8 +1,9 @@
 <div class="container-fluid" ng-controller="SurveyController">
 	<div class="row text-center" ng-show="isLoading">
-		<div class="timer-loader v-offset-1"></div>
+		<div class="timer-loader"></div>
 	</div>
-	<div class="row" ng-hide="isLoading || percentage">
+
+	<div class="row" ng-hide="isLoading || percentage || noQuestions">
 		<h1 class="text-center">
 			<span class="glyphicon {{icon}}"></span>
 		</h1>
@@ -49,6 +50,10 @@
 	</div>
 
 	<div ng-show="noQuestions" class="row text-center">
-		<span class="lead">Thank you for participating in our comparison survey, at this moment we have no more questions for you.</span>
+		<p class="lead">
+			Thank you for participating..
+		</p>
+		<p>in our comparison survey, that will be all the questions for now.</p>
+		<p>Why don't you check out our <a href="#/trivia">Did You Know?</a> section in the meantime?</p>
 	</div>
 </div>
