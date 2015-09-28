@@ -306,6 +306,7 @@
 				$http
 					.get(apiParams.euLife.url + apiUrl + '&user_key=' + apiParams.euLife.key)
 					.success(function(res){
+						res.TimeSeries = _.sortBy(res.TimeSeries, 'Value');
 						angular.forEach(res.TimeSeries, function(value, key){
 							if (value.Year == 2011){
 								total = total + value.WeightedFrequency;								
