@@ -967,7 +967,7 @@
 		filter: "",
 		option: 5.0,
 		getHeadline: function(country) {
-			return 'of people in '+ country +' never go to church';
+			return 'of people in '+ country +' don\'t go to church';
 		},
 		subtitle: "Never attend religious services, apart from weddings, funerals or christenings"
 	}, {
