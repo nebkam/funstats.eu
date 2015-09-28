@@ -12,6 +12,12 @@
 			.when('/', {
 				templateUrl: 'views/home.html'
 			})
+			.when('/about', {
+				templateUrl: 'views/about.html'
+			})
+			.when('/credits', {
+				templateUrl: 'views/credits.html'
+			})
 			.when('/trivia', {
 				templateUrl: 'views/trivia.html'
 			})
