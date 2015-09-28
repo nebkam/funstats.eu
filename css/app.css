@@ -28,6 +28,10 @@
 	text-transform: uppercase;
 	border-radius: 0 0 4px 4px;
 }
+.timer-loader {
+	background: url('../img/loader.gif') no-repeat center center;
+	min-height: 64px;
+}
 .btn {
 	font-family: 'Candal', sans-serif;
 }
