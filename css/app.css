@@ -52,10 +52,13 @@ h3.panel-title {
 .btn-primary {
 	background-color: #0055a5;
 }
+label.larger {
+	padding: 5px 8px;
+}
+
 .eu-yellow {
 	color: #fc0;
 }
-
 .v-offset-1 {
 	margin-top: 1em;
 }
