@@ -69,6 +69,11 @@ label.larger {
 	margin-left: 5%;
 	margin-right: 5%;
 }
+.radio.h-spacing-5 {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 5%;
+}
 .avatar-lg {
 	height: 40px;
 	width: 40px;
