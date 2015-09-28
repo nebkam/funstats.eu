@@ -16,7 +16,7 @@
 						$scope.icon = topic[0].icon;
 					}
 				} else {
-					//TODO
+					$scope.noQuestions = true;
 				}
 
 				//Reset
@@ -45,7 +45,7 @@
 				questionsService.getAllPercents($scope.apiUrl, $scope.answers, function(percents) {
 				$scope.showChart = true;			
 				$scope.chartObject = {};
-		    	$scope.chartObject.type = "BarChart";
+		    	$scope.chartObject.type = "PieChart";
 
 			    $scope.chartObject.data = {"cols": [
 			        {id: "t", label: "Answer", type: "string"},
