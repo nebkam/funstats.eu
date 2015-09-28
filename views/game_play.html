@@ -1,10 +1,10 @@
 <div class="container-fluid" ng-controller="GamePlayController">
 	<div class="row text-center" ng-show="isLoading">
-		<div class="timer-loader v-offset-1 v-offset-1-bottom"></div>
+		<div class="timer-loader v-offset-1"></div>
 	</div>
 
 	<div class="scene" ng-show="scene == 'character' && !isLoading">
-		<div class="panel panel-default v-offset-1">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Character</h3>
 			</div>
@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="scene" ng-show="scene == 'question' && !isLoading">
-		<div class="panel panel-default v-offset-1">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title avatar-title">
 					<img class="avatar-xs" ng-src="../img/avatars/{{ character.avatar }}.svg"/>
@@ -66,7 +66,7 @@
 	</div>
 
 	<div class="scene" ng-show="scene == 'end' && !isLoading">
-		<div class="panel panel-default v-offset-1">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Game Over</h3>
 			</div>
