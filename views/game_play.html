@@ -1,13 +1,6 @@
 <div class="container-fluid" ng-controller="GamePlayController">
-	<div class="scene" ng-show="isLoading">
-		<div class="panel panel-default v-offset-1">
-			<div class="panel-heading">
-				<h3 class="panel-title">Loading&hellip;</h3>
-			</div>
-			<div class="row text-center">
-				<div class="timer-loader v-offset-1 v-offset-1-bottom"></div>
-			</div>
-		</div>
+	<div class="row text-center" ng-show="isLoading">
+		<div class="timer-loader v-offset-1 v-offset-1-bottom"></div>
 	</div>
 
 	<div class="scene" ng-show="scene == 'character' && !isLoading">
@@ -40,7 +33,7 @@
 					<img class="flag" ng-src="../img/flags/{{ character.country.code }}.png"/>
 					<span class="pull-right">
 						{{ score }}
-						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star eu-yellow"></span>
 					</span>
 				</h3>
 			</div>
@@ -79,7 +72,7 @@
 			</div>
 			<div class="panel-body text-center">
 				<p>You scored</p>
-				<h1>{{ score }} <span class="glyphicon glyphicon-star"></span></h1>
+				<h1>{{ score }} <span class="glyphicon glyphicon-star eu-yellow"></span></h1>
 				<p ng-show="score > 0">You may be listed in Hi Scores!</p>
 				<form ng-hide="playerNameSubmitted || score == 0" class="form-inline v-offset-1">
 					<div class="form-group">
@@ -94,7 +87,7 @@
 			<table class="table table-striped">
 				<tr ng-repeat="highScore in highScores" ng-class="{ success: highScore.name == playerName }">
 					<td>{{ highScore.name }}</td>
-					<td>{{ highScore.score }} <span class="glyphicon glyphicon-star"></span></td>
+					<td>{{ highScore.score }} <span class="glyphicon glyphicon-star eu-yellow"></span></td>
 				</tr>
 			</table>
 		</div>
