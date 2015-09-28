@@ -18,7 +18,7 @@
 			</div>
 		</form>
 	</div>
-	<div class="row v-offset-1-bottom v-offset-1" ng-hide="isLoading || percentage">
+	<div class="row v-offset-1-bottom v-offset-1" ng-hide="isLoading || percentage || noQuestions">
 		<div class="col-xs-6 text-center">
 			<button type="button" class="btn btn-default btn-block" ng-click="nextQuestion();">Skip</button>
 		</div>
@@ -35,7 +35,10 @@
 		<h4>Compared to</h4>
 		<h2>{{ percentage[1] }}%</h2> 
 		<h5>in 2007</h5>
-	</div>	
+	</div>
+	<div ng-show="showChart" class="v-offset-1 v-offset-1-bottom">
+		<div google-chart chart="{{ chartObject }}" ng-show="true"></div>
+	</div>
 	<div class="row text-center v-offset-1-bottom" ng-show="percentage">
 		<div class="col-xs-6 text-center v-offset-1" ng-show="percentage" ng-click="showCharts();">
 			<button type="button" class="btn btn-default btn-block" ng-show="!showChart">Charts <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></button>
@@ -43,9 +46,6 @@
 		<div class="col-xs-6 text-center v-offset-1">
 			<button type="button" class="btn btn-primary btn-block" ng-click="nextQuestion();">Next <span class="glyphicon glyphicon-triangle-right eu-yellow" aria-hidden="true"></span></button>
 		</div>
-	</div>
-	<div ng-show="showChart" class="v-offset-1 v-offset-1-bottom">
-		<div google-chart chart="{{ chartObject }}" ng-show="true"></div>
 	</div>
 
 	<div ng-show="noQuestions" class="row text-center">

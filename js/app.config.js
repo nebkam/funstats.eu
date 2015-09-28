@@ -47,7 +47,7 @@
 		},
 		{
 			"id" : 2,
-			"question" : "What is your martial status?",
+			"question" : "What is your marital status?",
 			"apiUrl" : "/TimeseriesFrequency?variableId=3",
 			"type" : "TimeseriesFrequency",
 			"topic" : "Social stratification and groupings - Family life and marriage",
