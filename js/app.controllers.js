@@ -6,14 +6,19 @@
 			$scope.nextQuestion = function() {
 				$scope.showChart = false;
 				var random = questionsService.pickRandom();
-				$scope.question = random.question;
-				$scope.answers = random.answers;
-				$scope.apiUrl = random.apiUrl;
-				$scope.type = random.type;
-				var topic = _.where(surveyTopics, { title: random.topic });
-				if (topic[0]) {
-					$scope.icon = topic[0].icon;
+				if (random) {
+					$scope.question = random.question;
+					$scope.answers = random.answers;
+					$scope.apiUrl = random.apiUrl;
+					$scope.type = random.type;
+					var topic = _.where(surveyTopics, { title: random.topic });
+					if (topic[0]) {
+						$scope.icon = topic[0].icon;
+					}
+				} else {
+					//TODO
 				}
+
 				//Reset
 				$scope.percentage = 0;
 				$scope.selected = 0;

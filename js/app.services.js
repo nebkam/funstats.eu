@@ -253,10 +253,15 @@
 	}]);
 
 	appServices.factory('questionsService',
-		['$http','_','surveyQuestions','apiParams', function($http,_,surveyQuestions,apiParams) {
+		['$http','$localStorage','_','surveyQuestions','apiParams',
+			function($http,$localStorage,_,surveyQuestions,apiParams) {
 		return {
 			pickRandom: function() {
-				return _.shuffle(surveyQuestions)[0];
+				if (typeof $localStorage.questions == 'undefined') {
+					$localStorage.questions = _.shuffle(surveyQuestions);
+				}
+
+				return $localStorage.questions.shift();
 			},
 			/**
 			 * @param {String} apiUrl
