@@ -116,6 +116,7 @@
 			$scope.isLoading = false;
 			$scope.character = character;
 			$scope.scene = 'character';
+			gameService.generateQuestions();
 		});
 
 		$scope.showQuestion = function() {

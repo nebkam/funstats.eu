@@ -99,7 +99,10 @@
 		['$http','$window','_','ageGroups','genders','countryList','gameQuestions','apiParams',
 		function($http,$window,_,ageGroups,genders,countryList,gameQuestions,apiParams) {
 		return {
-			_questions: _.shuffle(gameQuestions),
+			_question:[],
+			generateQuestions: function() {
+				this._questions = _.shuffle(gameQuestions);
+			},
 			/**
 			 * Generate a random user
 			 * @param {Function} cb Receives character object or null on fail
