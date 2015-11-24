@@ -15,7 +15,7 @@
 			key: 'nebkam'
 		},
 		scores: {
-			url: 'http://api.funstats.eu/scores'
+			url: '/js/scores.json'
 		}
 	});
 

@@ -68,14 +68,7 @@
 			<div class="panel-body text-center">
 				<p>You scored</p>
 				<h1>{{ score }} <span class="glyphicon glyphicon-star eu-yellow"></span></h1>
-				<p ng-show="score > 0">You may be listed in Hi Scores!</p>
-				<form ng-hide="playerNameSubmitted || score == 0" class="form-inline v-offset-1">
-					<div class="form-group">
-						<label class="sr-only" for="playerName">Your name</label>
-						<input type="text" class="form-control" id="playerName" placeholder="Your name" ng-model="playerName">
-					</div>
-					<button type="submit" class="btn btn-primary" ng-disabled="!playerName.length" ng-click="submitName();">Save</button>
-				</form>
+				<p ng-show="score > 0">Thank you for playing.</p>
 			</div>
 		</div>
 		<div class="row v-offset-1" ng-show="highScores.length">
